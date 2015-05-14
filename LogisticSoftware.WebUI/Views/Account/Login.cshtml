@@ -1,0 +1,15 @@
+﻿@model LogisticSoftware.WebUI.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Вхід";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<h1>Вхід</h1>
+
+@using (Html.BeginForm("Login","Account"))
+{
+    @Html.ValidationSummary(true)
+    @Html.EditorForModel()
+    <p><input type="submit" value="Ввійти" /></p>
+}
+

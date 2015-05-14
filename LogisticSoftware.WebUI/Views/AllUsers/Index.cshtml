@@ -1,0 +1,66 @@
+﻿@model IEnumerable<LogisticSoftware.WebUI.Models.Entities.User>
+
+@{
+    ViewBag.Title = "Користувачі";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <h2>Користувачі</h2>
+
+    <p>
+        @Html.ActionLink("Додати", "Create")
+    </p>
+</header>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MobilePhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Login
+            </td>
+            <td>
+                @item.LastName
+            </td>
+            <td>
+                @item.FirstName
+            </td>
+            <td>
+                @item.MiddleName
+            </td>
+            <td>
+                @item.MobilePhone
+            </td>
+            <td>
+                @item.DateOfBirth.ToShortDateString()
+            </td>
+            <td>
+                @Html.ActionLink("Редагувати", "Edit", new { id = item.UserId }) |
+                @Html.ActionLink("Видалити", "Delete", new { id = item.UserId })
+            </td>
+        </tr>
+    }
+
+</table>

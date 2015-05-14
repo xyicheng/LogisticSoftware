@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript"
+            src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAFmKUPYnoLDxmJD5-jhOBoB5SbPwgGNws&sensor=false">
+    </script>
+</head>
+<body>
+<header>
+    <div id="exit">
+        @Html.ActionLink("Вийти", "Logout", "Account")
+    </div>
+    <div class="title">Транспортна логістика</div>
+    
+    <ul id="nav">
+        <li>
+            @Html.ActionLink("Поставки", "Index", "CurrentState")
+            <ul>
+                <li>@Html.ActionLink("Поточний стан", "Index", "CurrentState")</li>
+                <li>@Html.ActionLink("Поставки", "Index", "Supplies")</li>
+                <li>@Html.ActionLink("Виробничі потужності", "Index", "Factories")</li>
+                <li>@Html.ActionLink("Постачальники", "Index", "Suppliers")</li>
+                <li>@Html.ActionLink("Покупці", "Index", "Customers")</li>
+            </ul>
+        </li>
+        <li>
+            @Html.ActionLink("Користувачі", "Index", "AllUsers")
+            <ul>
+                <li>@Html.ActionLink("Всі користувачі", "Index", "AllUsers")</li>
+                <li>@Html.ActionLink("Адміністратори", "Index", "Admins")</li>
+                <li>@Html.ActionLink("Менеджери", "Index", "Managers")</li>
+                <li>@Html.ActionLink("Водії", "Index", "Drivers")</li>
+                <li>@Html.ActionLink("Експедитори", "Index", "ExpeditionManagers")</li>
+                <li>@Html.ActionLink("Клієнти", "Index", "Clients")</li>
+            </ul>
+        </li>
+        <li>
+            @Html.ActionLink("Транспорт","Index","Vehicles")
+            <ul>
+                <li>@Html.ActionLink("Транспортні засоби", "Index", "Vehicles")</li>
+                <li>@Html.ActionLink("Водійські категорії", "Index", "Categories")</li>
+                <li>@Html.ActionLink("Типи палього", "Index", "FuelTypes")</li>
+            </ul>
+        </li>
+    </ul>
+    
+</header>
+    <div id="content">
+        @RenderBody()
+    </div>
+</body>
+</html>
