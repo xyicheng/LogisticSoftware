@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+Ôªøusing System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LogisticSoftware.WebUI.Models.Entities
@@ -14,6 +14,9 @@ namespace LogisticSoftware.WebUI.Models.Entities
         public string Street { get; set; }
         public string NumberOfBuilding { get; set; }
 
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+
         [InverseProperty("From")]
         public virtual ICollection<Route> WhenFrom { get; set; }
 
@@ -22,9 +25,9 @@ namespace LogisticSoftware.WebUI.Models.Entities
 
         public override string ToString()
         {
-            return Region + " Ó·Î. "
-                + District + " -Ì. "
-                + City + ", ‚ÛÎ."
+            return Region + " –æ–±–ª. "
+                + District + " —Ä-–Ω. "
+                + City + ", –≤—É–ª."
                 + Street + ", "
                 + NumberOfBuilding;
         }

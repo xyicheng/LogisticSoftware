@@ -14,36 +14,36 @@
     <div id="exit">
         @Html.ActionLink("Вийти", "Logout", "Account")
     </div>
-    <div class="title">Транспортна логістика</div>
     
     <ul id="nav">
         <li>
-            @Html.ActionLink("Поставки", "Index", "CurrentState")
+            @Html.ActionLink("Логістика", "Index", "CurrentState")
             <ul>
-                <li>@Html.ActionLink("Поточний стан", "Index", "CurrentState")</li>
                 <li>@Html.ActionLink("Поставки", "Index", "Supplies")</li>
-                <li>@Html.ActionLink("Виробничі потужності", "Index", "Factories")</li>
+                
+            </ul>
+        </li>
+        <li>
+            @Html.ActionLink("Місця", "Index", "AllUsers")
+            <ul>
+                <li>@Html.ActionLink("Виробничі потужності", "Index", "AllUsers")</li>
+
                 <li>@Html.ActionLink("Постачальники", "Index", "Suppliers")</li>
                 <li>@Html.ActionLink("Покупці", "Index", "Customers")</li>
             </ul>
         </li>
         <li>
-            @Html.ActionLink("Користувачі", "Index", "AllUsers")
+            @Html.ActionLink("Управління автопарком", "Index", "Vehicles")
             <ul>
-                <li>@Html.ActionLink("Всі користувачі", "Index", "AllUsers")</li>
-                <li>@Html.ActionLink("Адміністратори", "Index", "Admins")</li>
-                <li>@Html.ActionLink("Менеджери", "Index", "Managers")</li>
-                <li>@Html.ActionLink("Водії", "Index", "Drivers")</li>
-                <li>@Html.ActionLink("Експедитори", "Index", "ExpeditionManagers")</li>
-                <li>@Html.ActionLink("Клієнти", "Index", "Clients")</li>
+                <li>@Html.ActionLink("Гаражі", "Index", "Vehicles")</li>
+                <li>@Html.ActionLink("Транспортні засоби", "Index", "Vehicles")</li>
+                <li>@Html.ActionLink("Водії", "Index", "Categories")</li>
             </ul>
         </li>
         <li>
-            @Html.ActionLink("Транспорт","Index","Vehicles")
+            @Html.ActionLink("Адміністрування", "Index", "Vehicles")
             <ul>
-                <li>@Html.ActionLink("Транспортні засоби", "Index", "Vehicles")</li>
-                <li>@Html.ActionLink("Водійські категорії", "Index", "Categories")</li>
-                <li>@Html.ActionLink("Типи палього", "Index", "FuelTypes")</li>
+                <li>@Html.ActionLink("Користувачі", "Index", "Vehicles")</li>
             </ul>
         </li>
     </ul>

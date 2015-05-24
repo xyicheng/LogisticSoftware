@@ -126,9 +126,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Main\CurrentStateController.cs" />
-    <Compile Include="Controllers\Main\CustomersController.cs" />
-    <Compile Include="Controllers\Main\FactoriesController.cs" />
-    <Compile Include="Controllers\Main\SuppliersController.cs" />
     <Compile Include="Controllers\Main\SuppliesController.cs" />
     <Compile Include="Controllers\Users\AdminsController.cs" />
     <Compile Include="Controllers\Users\AllUsersController.cs" />
@@ -216,7 +213,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

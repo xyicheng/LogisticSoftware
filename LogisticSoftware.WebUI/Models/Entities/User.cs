@@ -1,7 +1,8 @@
-using System;
+п»їusing System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace LogisticSoftware.WebUI.Models.Entities
 {
@@ -11,31 +12,31 @@ namespace LogisticSoftware.WebUI.Models.Entities
         public int UserId { get; set; }
 
         [Required]
-        [DisplayName("Логін")]
+        [DisplayName("Р›РѕРіС–РЅ")]
         public string Login { get; set; }
 
         [Required]
-
+        [HiddenInput]
         public string PasswordMd5 { get; set; }
 
         [Required]
-        [DisplayName("Ім'я")]
+        [DisplayName("Р†Рј'СЏ")]
         public string FirstName { get; set; }
 
         [Required]
-        [DisplayName("По-батькові")]
+        [DisplayName("РџРѕ-Р±Р°С‚СЊРєРѕРІС–")]
         public string MiddleName { get; set; }
 
         [Required]
-        [DisplayName("Прізвище")]
+        [DisplayName("РџСЂС–Р·РІРёС‰Рµ")]
         public string LastName { get; set; }
 
         [Required]
-        [DisplayName("Мобільний телефон")]
+        [DisplayName("РњРѕР±С–Р»СЊРЅРёР№ С‚РµР»РµС„РѕРЅ")]
         public string MobilePhone { get; set; }
 
         [Required]
-        [DisplayName("Дата народження")]
+        [DisplayName("Р”Р°С‚Р° РЅР°СЂРѕРґРґР¶РµРЅРЅСЏ")]
         public DateTime DateOfBirth { get; set; }
 
         public override string ToString()

@@ -62,6 +62,20 @@ namespace LogisticSoftware.WebUI.Models
             context.FuelTypes.Add(new FuelType() { FuelName = "Бензин А-95" });
             context.FuelTypes.Add(new FuelType() { FuelName = "Зріджений газ" });
 
+            context.Categories.Add(new Category() { CategoryName = "А1" });
+            context.Categories.Add(new Category() { CategoryName = "А" });
+            context.Categories.Add(new Category() { CategoryName = "B1" });
+            context.Categories.Add(new Category() { CategoryName = "B" });
+            context.Categories.Add(new Category() { CategoryName = "ВЕ" });
+            context.Categories.Add(new Category() { CategoryName = "C1" });
+            context.Categories.Add(new Category() { CategoryName = "С1Е" });
+            context.Categories.Add(new Category() { CategoryName = "C" });
+            context.Categories.Add(new Category() { CategoryName = "СЕ" });
+            context.Categories.Add(new Category() { CategoryName = "D1" });
+            context.Categories.Add(new Category() { CategoryName = "D1E" });
+            context.Categories.Add(new Category() { CategoryName = "D" });   
+            context.Categories.Add(new Category() { CategoryName = "DE" });
+
             base.Seed(context);
         }
     }

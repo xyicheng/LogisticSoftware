@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+п»їusing System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,7 +7,7 @@ namespace LogisticSoftware.WebUI.Models.Entities
     [Table("Drivers")]
     public class Driver : User
     {
-        [DisplayName("Катеогрії водійських прав")]
+        [DisplayName("РќР°СЏРІРЅС– РІРѕРґС–Р№СЃСЊРєС– РєР°С‚РµРіРѕСЂС–С—")]
         public virtual ICollection<Category> Categories { get; set; }
     }
 }

@@ -10,7 +10,7 @@ body {
 }
 
 body > header {
-    height: 5.2em;
+    height: 1.95em;
     background: gray;
     margin: 0 auto;
 }
@@ -171,7 +171,7 @@ body > header {
 #exit {
     float: right;
     padding-right: 20px;
-    padding-top: 1em;
+    padding-top: 0.4em;
 }
 
     #exit A {
