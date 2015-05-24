@@ -12,22 +12,6 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Login)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Login)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PasswordMd5)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PasswordMd5)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
 
@@ -70,6 +54,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.UserId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DriverId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

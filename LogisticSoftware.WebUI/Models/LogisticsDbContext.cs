@@ -13,13 +13,10 @@ namespace LogisticSoftware.WebUI.Models
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Driver> Drivers { get; set; }
-        public DbSet<Admin> Admins { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<ExpeditionManager> ExpeditionManagers { get; set; }
         public DbSet<FuelType> FuelTypes { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<ItemInSupply> ItemsInSupplies { get; set; }
-        public DbSet<OfficeManager> OfficeManagers { get; set; }
         public DbSet<Place> Places { get; set; }
         public DbSet<Supply> Supplies { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
@@ -30,13 +27,8 @@ namespace LogisticSoftware.WebUI.Models
     {
         protected override void Seed(LogisticsDbContext context)
         {
-            context.Admins.Add(new Admin()
+            context.Users.Add(new User()
             {
-                DateOfBirth = new DateTime(1993, 7, 13),
-                MobilePhone = "0935703236",
-                FirstName = "Олександр",
-                LastName = "Суховий",
-                MiddleName = "Іванович",
                 Login = "admin",
                 PasswordMd5 = "5ebe2294ecd0e0f08eab7690d2a6ee69"
             });
@@ -50,8 +42,6 @@ namespace LogisticSoftware.WebUI.Models
                 FirstName = "Максим",
                 LastName = "Свідерський",
                 MiddleName = "Юрійович",
-                Login = "driver",
-                PasswordMd5 = "5ebe2294ecd0e0f08eab7690d2a6ee69",
                 Categories = new List<Category> { cat },
             };
             context.Drivers.Add(driver);

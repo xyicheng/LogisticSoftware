@@ -10,109 +10,109 @@ using System.Web.Mvc;
 using LogisticSoftware.WebUI.Models;
 using LogisticSoftware.WebUI.Models.Entities;
 
-namespace LogisticSoftware.WebUI.Controllers.Vehicles
+namespace LogisticSoftware.WebUI.Controllers
 {
-    public class FuelTypesController : Controller
+    public class DriversController : Controller
     {
         private LogisticsDbContext db = new LogisticsDbContext();
 
-        // GET: FuelTypes
+        // GET: Drivers
         public async Task<ActionResult> Index()
         {
-            return View(await db.FuelTypes.ToListAsync());
+            return View(await db.Drivers.ToListAsync());
         }
 
-        // GET: FuelTypes/Details/5
+        // GET: Drivers/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FuelType fuelType = await db.FuelTypes.FindAsync(id);
-            if (fuelType == null)
+            Driver driver = await db.Drivers.FindAsync(id);
+            if (driver == null)
             {
                 return HttpNotFound();
             }
-            return View(fuelType);
+            return View(driver);
         }
 
-        // GET: FuelTypes/Create
+        // GET: Drivers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: FuelTypes/Create
+        // POST: Drivers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "FuelTypeId,FuelName")] FuelType fuelType)
+        public async Task<ActionResult> Create([Bind(Include = "DriverId,FirstName,MiddleName,LastName,MobilePhone,DateOfBirth")] Driver driver)
         {
             if (ModelState.IsValid)
             {
-                db.FuelTypes.Add(fuelType);
+                db.Drivers.Add(driver);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(fuelType);
+            return View(driver);
         }
 
-        // GET: FuelTypes/Edit/5
+        // GET: Drivers/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FuelType fuelType = await db.FuelTypes.FindAsync(id);
-            if (fuelType == null)
+            Driver driver = await db.Drivers.FindAsync(id);
+            if (driver == null)
             {
                 return HttpNotFound();
             }
-            return View(fuelType);
+            return View(driver);
         }
 
-        // POST: FuelTypes/Edit/5
+        // POST: Drivers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "FuelTypeId,FuelName")] FuelType fuelType)
+        public async Task<ActionResult> Edit([Bind(Include = "DriverId,FirstName,MiddleName,LastName,MobilePhone,DateOfBirth")] Driver driver)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(fuelType).State = EntityState.Modified;
+                db.Entry(driver).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(fuelType);
+            return View(driver);
         }
 
-        // GET: FuelTypes/Delete/5
+        // GET: Drivers/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FuelType fuelType = await db.FuelTypes.FindAsync(id);
-            if (fuelType == null)
+            Driver driver = await db.Drivers.FindAsync(id);
+            if (driver == null)
             {
                 return HttpNotFound();
             }
-            return View(fuelType);
+            return View(driver);
         }
 
-        // POST: FuelTypes/Delete/5
+        // POST: Drivers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            FuelType fuelType = await db.FuelTypes.FindAsync(id);
-            db.FuelTypes.Remove(fuelType);
+            Driver driver = await db.Drivers.FindAsync(id);
+            db.Drivers.Remove(driver);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

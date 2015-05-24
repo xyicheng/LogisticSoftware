@@ -125,32 +125,19 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Main\CurrentStateController.cs" />
-    <Compile Include="Controllers\Main\SuppliesController.cs" />
-    <Compile Include="Controllers\Users\AdminsController.cs" />
-    <Compile Include="Controllers\Users\AllUsersController.cs" />
-    <Compile Include="Controllers\Users\ClientsController.cs" />
-    <Compile Include="Controllers\Users\DriversController.cs" />
-    <Compile Include="Controllers\Users\ExpeditionManagersController.cs" />
-    <Compile Include="Controllers\Users\ManagersController.cs" />
-    <Compile Include="Controllers\Vehicles\CategoriesController.cs" />
-    <Compile Include="Controllers\Vehicles\FuelTypesController.cs" />
-    <Compile Include="Controllers\Vehicles\ModelsController.cs" />
-    <Compile Include="Controllers\Vehicles\VehiclesController.cs" />
+    <Compile Include="Controllers\CurrentStateController.cs" />
+    <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Abstract\IAuthProvider.cs" />
     <Compile Include="Infrastructure\Concrete\FormsAuthProvider.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
-    <Compile Include="Models\Entities\Admin.cs" />
     <Compile Include="Models\Entities\Category.cs" />
     <Compile Include="Models\Entities\Driver.cs" />
-    <Compile Include="Models\Entities\ExpeditionManager.cs" />
     <Compile Include="Models\Entities\FuelType.cs" />
     <Compile Include="Models\Entities\Item.cs" />
     <Compile Include="Models\Entities\ItemInSupply.cs" />
-    <Compile Include="Models\Entities\OfficeManager.cs" />
     <Compile Include="Models\Entities\Place.cs" />
     <Compile Include="Models\Entities\Route.cs" />
     <Compile Include="Models\Entities\Supply.cs" />
@@ -190,20 +177,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\AllUsers\Index.cshtml" />
     <Content Include="Views\CurrentState\Index.cshtml" />
-    <Content Include="Views\Drivers\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Views\FuelTypes\Create.cshtml" />
-    <Content Include="Views\FuelTypes\Delete.cshtml" />
-    <Content Include="Views\FuelTypes\Details.cshtml" />
-    <Content Include="Views\FuelTypes\Edit.cshtml" />
-    <Content Include="Views\FuelTypes\Index.cshtml" />
     <Content Include="Views\Drivers\Create.cshtml" />
     <Content Include="Views\Drivers\Delete.cshtml" />
     <Content Include="Views\Drivers\Details.cshtml" />
     <Content Include="Views\Drivers\Edit.cshtml" />
+    <Content Include="Views\Drivers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

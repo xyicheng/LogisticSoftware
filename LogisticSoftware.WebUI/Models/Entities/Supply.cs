@@ -13,14 +13,12 @@ namespace LogisticSoftware.WebUI.Models.Entities
         public DateTime BeginTime { get; set; }
         public DateTime EndTime { get; set; }
     
-        public virtual ExpeditionManager ExpeditionManager { get; set; }
         public virtual ICollection<ItemInSupply> ItemInSupply { get; set; }
-        public virtual OfficeManager OfficeManager { get; set; }
         public virtual Route Route { get; set; }
 
         public override string ToString()
         {
-            return BeginTime.ToString("dd.MM.yyyy") + ":" + ExpeditionManager + ":" + Route;
+            return BeginTime.ToString("dd.MM.yyyy") + ":" + Route;
         }
 
     }

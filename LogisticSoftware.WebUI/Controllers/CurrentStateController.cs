@@ -1,15 +1,13 @@
 ﻿using System.Web.Mvc;
 
-namespace LogisticSoftware.WebUI.Controllers.Main
+namespace LogisticSoftware.WebUI.Controllers
 {
-    [Authorize]
     public class CurrentStateController : Controller
     {
-
+        // GET: CurrentState
         public ActionResult Index()
         {
             return View();
         }
-
     }
 }
