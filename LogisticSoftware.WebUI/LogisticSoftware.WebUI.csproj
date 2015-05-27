@@ -127,6 +127,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CurrentStateController.cs" />
     <Compile Include="Controllers\DriversController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -134,12 +135,15 @@
     <Compile Include="Infrastructure\Concrete\FormsAuthProvider.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Models\Entities\Category.cs" />
+    <Compile Include="Models\Entities\Customer.cs" />
     <Compile Include="Models\Entities\Driver.cs" />
     <Compile Include="Models\Entities\FuelType.cs" />
+    <Compile Include="Models\Entities\Garage.cs" />
     <Compile Include="Models\Entities\Item.cs" />
     <Compile Include="Models\Entities\ItemInSupply.cs" />
     <Compile Include="Models\Entities\Place.cs" />
     <Compile Include="Models\Entities\Route.cs" />
+    <Compile Include="Models\Entities\Supplier.cs" />
     <Compile Include="Models\Entities\Supply.cs" />
     <Compile Include="Models\Entities\User.cs" />
     <Compile Include="Models\Entities\Vehicle.cs" />
@@ -185,6 +189,11 @@
     <Content Include="Views\Drivers\Details.cshtml" />
     <Content Include="Views\Drivers\Edit.cshtml" />
     <Content Include="Views\Drivers\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

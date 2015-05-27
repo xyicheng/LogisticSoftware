@@ -16,6 +16,11 @@ namespace LogisticSoftware.WebUI.Models.Entities
         public string Login { get; set; }
 
         [Required]
+        [DisplayName("П.І.Б.")]
+        public string Name { get; set; }
+
+        [ScaffoldColumn(false)]
+        [Required]
         [HiddenInput]
         public string PasswordMd5 { get; set; }
 

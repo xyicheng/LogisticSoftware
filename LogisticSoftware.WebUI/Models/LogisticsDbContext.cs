@@ -30,6 +30,7 @@ namespace LogisticSoftware.WebUI.Models
             context.Users.Add(new User()
             {
                 Login = "admin",
+                Name = "Суховий О. І.",
                 PasswordMd5 = "5ebe2294ecd0e0f08eab7690d2a6ee69"
             });
             var cat = new Category() { CategoryName = "С" };

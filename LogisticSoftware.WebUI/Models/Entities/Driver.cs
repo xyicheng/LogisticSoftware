@@ -31,6 +31,8 @@ namespace LogisticSoftware.WebUI.Models.Entities
         [DisplayName("Дата народдження")]
         public DateTime DateOfBirth { get; set; }
 
+        [DisplayName("Прикріплений ТЗ")]
+        public Vehicle Vehicle { get; set; }
 
         [DisplayName("Наявні водійські категорії")]
         public virtual ICollection<Category> Categories { get; set; }

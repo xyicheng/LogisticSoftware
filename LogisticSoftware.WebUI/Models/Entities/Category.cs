@@ -11,10 +11,5 @@ namespace LogisticSoftware.WebUI.Models.Entities
     
         public virtual ICollection<Driver> Drivers { get; set; }
 
-        public override string ToString()
-        {
-            return CategoryName;
-        }
-
     }
 }
