@@ -15,6 +15,7 @@ namespace LogisticSoftware.WebUI.Models.Entities
         [Required(ErrorMessage = "Логін є обов'язковим полем")]
         [DisplayName("Логін")]
         [Index(IsUnique = true)]
+        [StringLength(450)]
         public string Login { get; set; }
 
         [Required(ErrorMessage = "П.І.Б. є обов'язковим полем")]
