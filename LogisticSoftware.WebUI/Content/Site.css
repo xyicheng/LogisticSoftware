@@ -9,11 +9,11 @@ body {
     font-family: Arial;
 }
 
-body > header {
-    height: 1.95em;
-    background: gray;
-    margin: 0 auto;
-}
+    body > header {
+        height: 1.75em;
+        background: gray;
+        margin: 0 auto;
+    }
 
 /* Login form BEGIN */
 
@@ -105,7 +105,6 @@ body > header {
     #nav ul {
         list-style: none;
         position: absolute;
-        left: -2em;
         display: none;
         opacity: 0;
     }
@@ -146,27 +145,27 @@ body > header {
 
 
 
-    #content header {
-        margin: 0 auto;
-        width: 95%;
+#content header {
+    margin: 0 auto;
+    width: 95%;
+}
+
+    #content header a:link {
+        color: #666;
+        font-weight: bold;
+        text-decoration: none;
     }
 
-        #content header a:link {
-            color: #666;
-            font-weight: bold;
-            text-decoration: none;
-        }
+    #content header a:visited {
+        color: #999999;
+        font-weight: bold;
+        text-decoration: none;
+    }
 
-        #content header a:visited {
-            color: #999999;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        #content header a:active, #content header a:hover {
-            color: #bd5a35;
-            text-decoration: underline;
-        }
+    #content header a:active, #content header a:hover {
+        color: #bd5a35;
+        text-decoration: underline;
+    }
 
 #exit {
     float: right;
