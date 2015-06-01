@@ -15,16 +15,68 @@ body {
         margin: 0 auto;
     }
 
-    .content_header h2 {
-        font-size: 2em;
-        margin-top: 0.3em;
-        margin-bottom: 0.3em;
-    } 
-    .content_header p {
-        font-size: 1em;
-        margin-top: 0.3em;
-        margin-bottom: 0.3em;
-    } 
+
+#content {
+    margin: 0 auto;
+    width: 95%;
+}
+
+
+#content header h2 {
+    font-size: 2em;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+#content header h3 {
+    font-size: 1.2em;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+#content header p {
+    font-size: 1em;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+    #content header a:link {
+        color: #666;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    #content header a:visited {
+        color: #999999;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    #content header a:active, #content header a:hover {
+        color: #bd5a35;
+        text-decoration: underline;
+    }
+
+    #content .form-group {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    #content .form-group > label {
+       display: block;
+       padding-bottom: 0.3em; 
+    }
+
+    #content .dl-horizontal dt {
+        display: block;
+        padding-bottom: 0.3em; 
+    }
+
+    #content .dl-horizontal dd {
+        display: block;
+        padding-bottom: 0.5em;
+        padding-left: 0.3em;
+        font-weight: bold;
+    }
 
 /* Login form BEGIN */
 
@@ -153,31 +205,6 @@ body {
         transform: scale(1.05);
     }
 
-
-
-
-#content header {
-    margin: 0 auto;
-    width: 95%;
-}
-
-    #content header a:link {
-        color: #666;
-        font-weight: bold;
-        text-decoration: none;
-    }
-
-    #content header a:visited {
-        color: #999999;
-        font-weight: bold;
-        text-decoration: none;
-    }
-
-    #content header a:active, #content header a:hover {
-        color: #bd5a35;
-        text-decoration: underline;
-    }
-
 #exit {
     float: right;
     padding-right: 20px;
@@ -198,7 +225,7 @@ body {
 /*Table BEGIN*/
 
 table {
-    width: 95%;
+    width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     color: #666;
     font-size: 12px;

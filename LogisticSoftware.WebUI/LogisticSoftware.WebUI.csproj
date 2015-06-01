@@ -125,11 +125,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CurrentStateController.cs" />
-    <Compile Include="Controllers\DriversController.cs" />
-    <Compile Include="Controllers\PlacesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -188,24 +184,8 @@
     <Content Include="Views\CurrentState\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Views\Drivers\Create.cshtml" />
-    <Content Include="Views\Drivers\Delete.cshtml" />
-    <Content Include="Views\Drivers\Details.cshtml" />
-    <Content Include="Views\Drivers\Edit.cshtml" />
-    <Content Include="Views\Drivers\Index.cshtml" />
-    <Content Include="Views\Vehicles\Create.cshtml" />
-    <Content Include="Views\Vehicles\Delete.cshtml" />
-    <Content Include="Views\Vehicles\Details.cshtml" />
-    <Content Include="Views\Vehicles\Edit.cshtml" />
-    <Content Include="Views\Vehicles\Index.cshtml" />
-    <Content Include="Views\Places\Create.cshtml" />
-    <Content Include="Views\Places\Delete.cshtml" />
-    <Content Include="Views\Places\Details.cshtml" />
-    <Content Include="Views\Places\Edit.cshtml" />
-    <Content Include="Views\Places\Index.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
-    <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
