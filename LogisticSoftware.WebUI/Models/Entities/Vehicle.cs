@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LogisticSoftware.WebUI.Models.Entities
@@ -28,6 +29,11 @@ namespace LogisticSoftware.WebUI.Models.Entities
 
         [DisplayName("Прикріплений водій")]
         public Driver Driver { get; set; }
+        [Key, ForeignKey("Driver")]
+        public int DriverId { get; set; }
+
+        [DisplayName("Прикріплений до гаража")]
+        public Garage Garage { get; set; }
 
         [DisplayName("Тип пального")]
         public virtual FuelType FuelType { get; set; }

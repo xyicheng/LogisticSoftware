@@ -4,12 +4,13 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<header>
+    <h2>Користувачі</h2>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    <p>
+        @Html.ActionLink("Додати користувача", "Create")
+    </p>
+</header>
 <table class="table">
     <tr>
         <th>
@@ -30,9 +31,9 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+            @Html.ActionLink("Реадгувати", "Edit", new { id=item.UserId }) |
+            @Html.ActionLink("Деталі", "Details", new { id=item.UserId }) |
+            @Html.ActionLink("Видалити", "Delete", new { id=item.UserId })
         </td>
     </tr>
 }

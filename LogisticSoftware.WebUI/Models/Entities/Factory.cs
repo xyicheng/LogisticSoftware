@@ -6,9 +6,8 @@ using System.Web;
 
 namespace LogisticSoftware.WebUI.Models.Entities
 {
-    [Table("Garages")]
-    public class Garage : Place
+    [Table("Factories")]
+    public class Factory: Place
     {
-        public virtual ICollection<Vehicle> Vehicles { get; set; } 
     }
 }

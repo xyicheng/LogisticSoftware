@@ -5,11 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<header>
+    <h2>Водії</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    <p>
+        @Html.ActionLink("Додати водія", "Create")
+    </p>
+</header>
 <table class="table">
     <tr>
         <th>
@@ -48,9 +50,9 @@
             @Html.DisplayFor(modelItem => item.DateOfBirth)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DriverId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.DriverId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DriverId })
+            @Html.ActionLink("Редагувати", "Edit", new { id=item.DriverId }) |
+            @Html.ActionLink("Деталі", "Details", new { id=item.DriverId }) |
+            @Html.ActionLink("Видалити", "Delete", new { id=item.DriverId })
         </td>
     </tr>
 }

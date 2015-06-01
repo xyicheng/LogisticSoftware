@@ -1,0 +1,59 @@
+﻿@model LogisticSoftware.WebUI.Models.Entities.Place
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Place</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Region)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.District)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.District)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Street)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Street)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfBuilding)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfBuilding)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PlaceId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
