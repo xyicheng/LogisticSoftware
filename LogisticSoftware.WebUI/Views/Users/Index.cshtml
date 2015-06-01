@@ -4,18 +4,15 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<header>
+<header class="content_header">
     <h2>Користувачі</h2>
 
     <p>
-        @Html.ActionLink("Додати користувача", "Create")
+        @Html.ActionLink("Додати нового коритсувача", "Create")
     </p>
 </header>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserId)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Login)
         </th>
@@ -28,18 +25,14 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.UserId)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Login)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Реадгувати", "Edit", new {id = item.UserId}) |
-            @Html.ActionLink("Деталі", "Details", new {id = item.UserId}) |
-            @Html.ActionLink("Видалити", "Delete", new {id = item.UserId})
+            @Html.ActionLink("Редагувати", "Edit", new { id=item.UserId }) |
+            @Html.ActionLink("Видалити", "Delete", new { id=item.UserId })
         </td>
     </tr>
 }

@@ -22,10 +22,9 @@ namespace LogisticSoftware.WebUI.Models.Entities
         [DisplayName("П.І.Б.")]
         public string Name { get; set; }
 
-        [ScaffoldColumn(false)]
         [Required]
-        [HiddenInput]
-        public string PasswordMd5 { get; set; }
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
 
         
     }

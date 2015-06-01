@@ -15,6 +15,17 @@ body {
         margin: 0 auto;
     }
 
+    .content_header h2 {
+        font-size: 2em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+    } 
+    .content_header p {
+        font-size: 1em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+    } 
+
 /* Login form BEGIN */
 
 #login_wrapper {
@@ -249,7 +260,7 @@ table {
         }
 
         table tr td {
-            padding: 18px;
+            padding: 10px;
             border-top: 1px solid #ffffff;
             border-bottom: 1px solid #e0e0e0;
             border-left: 1px solid #e0e0e0;
