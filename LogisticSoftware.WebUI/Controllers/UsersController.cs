@@ -12,6 +12,7 @@ using LogisticSoftware.WebUI.Models.Entities;
 
 namespace LogisticSoftware.WebUI.Controllers
 {
+    [Authorize(Users = "admin")]
     public class UsersController : Controller
     {
         private LogisticsDbContext db = new LogisticsDbContext();

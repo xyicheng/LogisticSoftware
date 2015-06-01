@@ -33,6 +33,7 @@
             </ul>
         </li>
         <li>
+
             @Html.ActionLink("Управління автопарком", "Index", "Vehicles")
             <ul>
                 <li>@Html.ActionLink("Гаражі", "Index", "Vehicles")</li>
@@ -40,9 +41,12 @@
                 <li>@Html.ActionLink("Водії", "Index", "Drivers")</li>
             </ul>
         </li>
-        <li>
-            @Html.ActionLink("Користувачі", "Index", "Users")
-        </li>
+        @if (HttpContext.Current.User.Identity.Name == "admin")
+        {
+            <li>
+                @Html.ActionLink("Користувачі", "Index", "Users")
+            </li>
+        }
     </ul>
     
 </header>

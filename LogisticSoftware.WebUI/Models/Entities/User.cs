@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 using System.Web.Mvc;
 
 namespace LogisticSoftware.WebUI.Models.Entities
@@ -9,10 +10,12 @@ namespace LogisticSoftware.WebUI.Models.Entities
     [Table("Users")]
     public class User
     {
+        [DisplayName("Id Користувавча")]
         public int UserId { get; set; }
 
         [Required]
         [DisplayName("Логін")]
+        
         public string Login { get; set; }
 
         [Required]

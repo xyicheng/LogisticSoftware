@@ -33,6 +33,12 @@ namespace LogisticSoftware.WebUI.Models
                 Name = "Суховий О. І.",
                 PasswordMd5 = "5ebe2294ecd0e0f08eab7690d2a6ee69"
             });
+            context.Users.Add(new User()
+            {
+                Login = "user1",
+                Name = "Іванов І. І.",
+                PasswordMd5 = "5ebe2294ecd0e0f08eab7690d2a6ee69"
+            });
             var cat = new Category() { CategoryName = "С" };
             context.Categories.Add(cat);
             context.SaveChanges();
