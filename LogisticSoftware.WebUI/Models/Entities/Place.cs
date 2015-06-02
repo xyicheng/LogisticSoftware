@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Reflection.Emit;
 
 namespace LogisticSoftware.WebUI.Models.Entities
 {
@@ -10,6 +11,10 @@ namespace LogisticSoftware.WebUI.Models.Entities
     {
         
         public int PlaceId { get; set; }
+
+        [Required(ErrorMessage = "Назва є обов'язковим полем")]
+        [DisplayName("Назва")]
+        public string PlaceName { get; set; }
 
         [Required(ErrorMessage = "Область є обов'язковим полем")]
         [DisplayName("Область")]

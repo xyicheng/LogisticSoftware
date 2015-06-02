@@ -1,16 +1,23 @@
-﻿@model LogisticSoftware.WebUI.Models.Entities.Garage
+﻿@model LogisticSoftware.WebUI.Models.Entities.Place
 
 @{
-    ViewBag.Title = "Гараж";
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div id="content">
     <header>
-        <h2>Гараж</h2>
+        <h2>@ViewBag.Title</h2>
     </header>
     <div class="lefted">
         <hr />
         <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PlaceName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PlaceName)
+            </dd>
             <dt>
                 @Html.DisplayNameFor(model => model.Region)
             </dt>
@@ -58,7 +65,7 @@
         </p>
         <br />
         <p>
-            @Html.ActionLink("Вернтуись до списку гаражів", "Index")
+            @Html.ActionLink("Вернтуись до списку", "Index")
         </p>
     </div>
 
@@ -75,12 +82,11 @@
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(@Model.Latitude, @Model.Longitude),
                 map: map,
-                title: 'Гараж №1'
+                title: '@Model.PlaceName'
             });
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-
     <div id="map_canvas" style="width: 800px; height: 500px; float: right;"></div>
 </div>

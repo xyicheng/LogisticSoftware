@@ -20,6 +20,7 @@ namespace LogisticSoftware.WebUI.Models
         public DbSet<ItemInSupply> ItemsInSupplies { get; set; }
         public DbSet<Place> Places { get; set; }
         public DbSet<Garage> Garages { get; set; }
+        public DbSet<Factory> Factories { get; set; }
         public DbSet<Supply> Supplies { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
 
@@ -85,6 +86,7 @@ namespace LogisticSoftware.WebUI.Models
 
             var garage = new Garage()
             {
+                PlaceName = "Гараж №1",
                 Region = "Черкаська",
                 District = "Соснівський",
                 City = "Черкаси",
@@ -94,6 +96,19 @@ namespace LogisticSoftware.WebUI.Models
                 Longitude = 32.044730,
             };
             context.Garages.Add(garage);
+
+            var factory = new Factory()
+            {
+                PlaceName = "Фабрика №1",
+                Region = "Черкаська",
+                District = "Придніпровський",
+                City = "Черкаси",
+                Street = "пр. Хіміків",
+                NumberOfBuilding = "32",
+                Latitude = 49.401511,
+                Longitude = 32.053967,
+            };
+            context.Factories.Add(factory);
 
             base.Seed(context);
         }

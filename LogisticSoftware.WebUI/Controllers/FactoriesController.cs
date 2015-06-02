@@ -1,117 +1,120 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using LogisticSoftware.WebUI.Models;
 using LogisticSoftware.WebUI.Models.Entities;
 
 namespace LogisticSoftware.WebUI.Controllers
 {
-    [Authorize]
-    public class GaragesController : Controller
+    public class FactoriesController : Controller
     {
         private LogisticsDbContext db = new LogisticsDbContext();
 
-        // GET: Garages
+        // GET: Factories
         public ActionResult Index()
         {
-            ViewBag.Title = "Гаражі";
-            ViewBag.CreateString = "Додати гараж";
-            return View("~/Views/Shared/Places/Index.cshtml", db.Garages.ToList());
+            ViewBag.Title = "Виробничі потужності";
+            ViewBag.CreateString = "Додати виробничу потужність";
+            return View("~/Views/Shared/Places/Index.cshtml", db.Factories.ToList());
         }
 
-        // GET: Garages/Details/5
+        // GET: Factories/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Garage garage = db.Garages.Find(id);
-            if (garage == null)
+            Factory factory = db.Factories.Find(id);
+            if (factory == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Title = "Гараж";
-            return View("~/Views/Shared/Places/Details.cshtml", garage);
+            ViewBag.Title = "Виробнича потужність";
+            return View("~/Views/Shared/Places/Details.cshtml", factory);
         }
 
-        // GET: Garages/Create
+        // GET: Factories/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Garages/Create
+        // POST: Factories/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PlaceId,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Garage garage)
+        public ActionResult Create([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Factory factory)
         {
             if (ModelState.IsValid)
             {
-                db.Garages.Add(garage);
+                db.Factories.Add(factory);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(garage);
+            return View(factory);
         }
 
-        // GET: Garages/Edit/5
+        // GET: Factories/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Garage garage = db.Garages.Find(id);
-            if (garage == null)
+            Factory factory = db.Factories.Find(id);
+            if (factory == null)
             {
                 return HttpNotFound();
             }
-            return View(garage);
+            return View(factory);
         }
 
-        // POST: Garages/Edit/5
+        // POST: Factories/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PlaceId,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Garage garage)
+        public ActionResult Edit([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Factory factory)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(garage).State = EntityState.Modified;
+                db.Entry(factory).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(garage);
+            return View(factory);
         }
 
-        // GET: Garages/Delete/5
+        // GET: Factories/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Garage garage = db.Garages.Find(id);
-            if (garage == null)
+            Factory factory = db.Factories.Find(id);
+            if (factory == null)
             {
                 return HttpNotFound();
             }
-            return View(garage);
+            return View(factory);
         }
 
-        // POST: Garages/Delete/5
+        // POST: Factories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Garage garage = db.Garages.Find(id);
-            db.Garages.Remove(garage);
+            Factory factory = db.Factories.Find(id);
+            db.Factories.Remove(factory);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

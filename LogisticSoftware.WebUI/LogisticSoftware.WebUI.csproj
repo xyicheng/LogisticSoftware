@@ -126,6 +126,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DriversController.cs" />
+    <Compile Include="Controllers\FactoriesController.cs" />
     <Compile Include="Controllers\GaragesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -168,7 +169,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\CurrentState\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
@@ -202,19 +202,19 @@
     <Content Include="Views\Drivers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Garages\Create.cshtml" />
+    <Content Include="Views\Shared\Places\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Garages\Delete.cshtml" />
+    <Content Include="Views\Shared\Places\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Garages\Details.cshtml" />
+    <Content Include="Views\Shared\Places\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Garages\Edit.cshtml" />
+    <Content Include="Views\Shared\Places\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Garages\Index.cshtml" />
+    <Content Include="Views\Shared\Places\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
