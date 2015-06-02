@@ -11,8 +11,6 @@ namespace LogisticSoftware.WebUI.Models.Entities
     [Table("Suppliers")]
     public class Supplier : Place
     {
-        [Required]
-        [DisplayName("Постачальник")]
-        public string SupplierName { get; set; }
+
     }
 }

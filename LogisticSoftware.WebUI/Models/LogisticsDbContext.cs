@@ -13,16 +13,22 @@ namespace LogisticSoftware.WebUI.Models
         { }
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Driver> Drivers { get; set; }
-        public DbSet<User> Users { get; set; }
         public DbSet<FuelType> FuelTypes { get; set; }
-        public DbSet<Item> Items { get; set; }
-        public DbSet<ItemInSupply> ItemsInSupplies { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Driver> Drivers { get; set; }
         public DbSet<Place> Places { get; set; }
         public DbSet<Garage> Garages { get; set; }
         public DbSet<Factory> Factories { get; set; }
-        public DbSet<Supply> Supplies { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+
         public DbSet<Vehicle> Vehicles { get; set; }
+
+        public DbSet<Item> Items { get; set; }
+        public DbSet<ItemInSupply> ItemsInSupplies { get; set; }
+        
+        public DbSet<Supply> Supplies { get; set; }
+        
 
     }
 
@@ -109,6 +115,32 @@ namespace LogisticSoftware.WebUI.Models
                 Longitude = 32.053967,
             };
             context.Factories.Add(factory);
+
+            var supplier = new Supplier()
+            {
+                PlaceName = "Постачальник №1",
+                Region = "Черкаська",
+                District = "Придніпровський",
+                City = "Черкаси",
+                Street = "пр. Хіміків",
+                NumberOfBuilding = "32",
+                Latitude = 49.401511,
+                Longitude = 32.053967,
+            };
+            context.Suppliers.Add(supplier);
+
+            var customer = new Customer()
+            {
+                PlaceName = "Клієнт №1",
+                Region = "Черкаська",
+                District = "Придніпровський",
+                City = "Черкаси",
+                Street = "пр. Хіміків",
+                NumberOfBuilding = "32",
+                Latitude = 49.401511,
+                Longitude = 32.053967,
+            };
+            context.Customers.Add(customer);
 
             base.Seed(context);
         }

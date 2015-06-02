@@ -11,8 +11,5 @@ namespace LogisticSoftware.WebUI.Models.Entities
     [Table("Customers")]
     public class Customer : Place
     {
-        [Required]
-        [DisplayName("Клієнт")]
-        public string CustomerName { get; set; }
     }
 }

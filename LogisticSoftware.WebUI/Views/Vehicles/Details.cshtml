@@ -1,0 +1,75 @@
+﻿@model LogisticSoftware.WebUI.Models.Entities.Vehicle
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vehicle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Driver.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Driver.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VehicleId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastInspection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastInspection)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrunkSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrunkSize)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DriverId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
