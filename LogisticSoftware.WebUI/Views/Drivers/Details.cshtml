@@ -1,0 +1,49 @@
+﻿@model LogisticSoftware.WebUI.Models.Entities.Driver
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="content">
+    <header>
+        <h2>Водій</h2>
+    </header>
+    
+
+    <div>
+        <hr/>
+        <dl class="dl-horizontal">
+            @if (Model.Vehicle != null)
+            {
+                <dt>
+                   Прикріплений ТЗ
+                </dt>
+
+                <dd>
+                    @Model.Vehicle.ModelName + " " + Model.Vehicle.RegistrationNumber
+                </dd>
+            }
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateOfBirth)
+            </dd>
+
+        </dl>
+    </div>
+    <hr/>
+    <p>
+        @Html.ActionLink("Редагувати", "Edit", new {id = Model.DriverId}) |
+        @Html.ActionLink("Повернутись до списку водіїв", "Index")
+    </p>
+</div>

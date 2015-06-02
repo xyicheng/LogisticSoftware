@@ -1,0 +1,57 @@
+﻿@model LogisticSoftware.WebUI.Models.Entities.Driver
+
+@{
+    ViewBag.Title = "Видалення водія";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="content">
+    <header>
+        <h2>Видалення водія</h2>
+
+        <h3>Ви впевнені, що хочете видалити даного водія?</h3>
+    </header>
+    <div>
+
+        <hr/>
+        <dl class="dl-horizontal">
+            @if (Model.Vehicle != null)
+            {
+                <dt>
+                    Прикріплений ТЗ
+                </dt>
+
+                <dd>
+                    @Model.Vehicle.ModelName + " " + Model.Vehicle.RegistrationNumber
+                </dd>
+            }
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateOfBirth)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Видалити" class="btn btn-default"/>
+                <hr/>
+                @Html.ActionLink("Вернутись до списку водіїв", "Index")
+            </div>
+        }
+    </div>
+</div>

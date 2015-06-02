@@ -30,7 +30,7 @@ namespace LogisticSoftware.WebUI.Models
             context.Users.Add(new User()
             {
                 Login = "admin",
-                Name = "Суховий О. І.",
+                Name = "Петров П.П.",
                 Password = "secret"
             });
             context.Users.Add(new User()
@@ -45,10 +45,15 @@ namespace LogisticSoftware.WebUI.Models
             var driver = new Driver
             {
                 DateOfBirth = new DateTime(1994, 6, 2),
-                MobilePhone = "0935703236",
-                FirstName = "Максим",
-                LastName = "Свідерський",
-                MiddleName = "Юрійович",
+                Name = "Іванов І.І.",
+                Categories = new List<Category> { cat },
+            };
+            context.Drivers.Add(driver);
+
+            driver = new Driver
+            {
+                DateOfBirth = new DateTime(1986, 7, 2),
+                Name = "Сергієв С.І.",
                 Categories = new List<Category> { cat },
             };
             context.Drivers.Add(driver);

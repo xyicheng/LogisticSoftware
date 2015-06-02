@@ -11,21 +11,9 @@ namespace LogisticSoftware.WebUI.Models.Entities
     {
         public int DriverId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "П.І.Б. є обов'язковим полем")]
         [DisplayName("Ім'я")]
-        public string FirstName { get; set; }
-
-        [Required]
-        [DisplayName("По-батькові")]
-        public string MiddleName { get; set; }
-
-        [Required]
-        [DisplayName("Прізвище")]
-        public string LastName { get; set; }
-
-        [Required]
-        [DisplayName("Мобільний телефон")]
-        public string MobilePhone { get; set; }
+        public string Name { get; set; }
 
         [Required]
         [DisplayName("Дата народдження")]
