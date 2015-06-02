@@ -18,7 +18,7 @@ namespace LogisticSoftware.WebUI.Controllers
         // GET: Vehicles
         public ActionResult Index()
         {
-            var vehicles = db.Vehicles.Include(v => v.Driver);
+            var vehicles = db.Vehicles.Include(v => v.Driver).Include(v => v.FuelType).Include(v => v.Garage);
             return View(vehicles.ToList());
         }
 
@@ -41,6 +41,8 @@ namespace LogisticSoftware.WebUI.Controllers
         public ActionResult Create()
         {
             ViewBag.DriverId = new SelectList(db.Drivers, "DriverId", "Name");
+            ViewBag.FuelTypeId = new SelectList(db.FuelTypes, "FuelTypeId", "FuelName");
+            ViewBag.PlaceId = new SelectList(db.Garages, "PlaceId", "PlaceName");
             return View();
         }
 
@@ -49,7 +51,7 @@ namespace LogisticSoftware.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DriverId,VehicleId,RegistrationNumber,ModelName,LastInspection,WeightCapacity,TrunkSize")] Vehicle vehicle)
+        public ActionResult Create([Bind(Include = "VehicleId,RegistrationNumber,ModelName,LastInspection,WeightCapacity,TrunkSize,DriverId,PlaceId,FuelTypeId")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -59,6 +61,8 @@ namespace LogisticSoftware.WebUI.Controllers
             }
 
             ViewBag.DriverId = new SelectList(db.Drivers, "DriverId", "Name", vehicle.DriverId);
+            ViewBag.FuelTypeId = new SelectList(db.FuelTypes, "FuelTypeId", "FuelName", vehicle.FuelTypeId);
+            ViewBag.PlaceId = new SelectList(db.Garages, "PlaceId", "PlaceName", vehicle.PlaceId);
             return View(vehicle);
         }
 
@@ -75,6 +79,8 @@ namespace LogisticSoftware.WebUI.Controllers
                 return HttpNotFound();
             }
             ViewBag.DriverId = new SelectList(db.Drivers, "DriverId", "Name", vehicle.DriverId);
+            ViewBag.FuelTypeId = new SelectList(db.FuelTypes, "FuelTypeId", "FuelName", vehicle.FuelTypeId);
+            ViewBag.PlaceId = new SelectList(db.Garages, "PlaceId", "PlaceName", vehicle.PlaceId);
             return View(vehicle);
         }
 
@@ -83,7 +89,7 @@ namespace LogisticSoftware.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DriverId,VehicleId,RegistrationNumber,ModelName,LastInspection,WeightCapacity,TrunkSize")] Vehicle vehicle)
+        public ActionResult Edit([Bind(Include = "VehicleId,RegistrationNumber,ModelName,LastInspection,WeightCapacity,TrunkSize,DriverId,PlaceId,FuelTypeId")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -92,6 +98,8 @@ namespace LogisticSoftware.WebUI.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.DriverId = new SelectList(db.Drivers, "DriverId", "Name", vehicle.DriverId);
+            ViewBag.FuelTypeId = new SelectList(db.FuelTypes, "FuelTypeId", "FuelName", vehicle.FuelTypeId);
+            ViewBag.PlaceId = new SelectList(db.Garages, "PlaceId", "PlaceName", vehicle.PlaceId);
             return View(vehicle);
         }
 

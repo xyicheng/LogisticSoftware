@@ -19,7 +19,7 @@ namespace LogisticSoftware.WebUI.Controllers
         // GET: Drivers
         public ActionResult Index()
         {
-            var drivers = db.Drivers.Include(d => d.Vehicle);
+            var drivers = db.Drivers;
             return View(drivers.ToList());
         }
 

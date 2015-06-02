@@ -1,70 +1,81 @@
 ﻿@model IEnumerable<LogisticSoftware.WebUI.Models.Entities.Vehicle>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Транспортні засоби";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<div id="content">
+    <header>
+        <h2>Транспортні засоби</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Driver.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VehicleId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RegistrationNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ModelName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastInspection)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WeightCapacity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TrunkSize)
-        </th>
-        <th></th>
-    </tr>
+        <p>
+            @Html.ActionLink("Додати транспортний засіб", "Create")
+        </p>
+    </header>
+    <table class="table">
+        <tr>
+            <th>
+                П.І.Б. водія
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FuelType.FuelName)
+            </th>
+            <th>
+                Гараж
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistrationNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastInspection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeightCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrunkSize)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Driver.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VehicleId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegistrationNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ModelName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastInspection)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WeightCapacity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrunkSize)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DriverId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.DriverId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DriverId })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Driver.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FuelType.FuelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Garage.PlaceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RegistrationNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastInspection)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WeightCapacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrunkSize)
+                </td>
+                <td>
+                    @Html.ActionLink("Редагувати", "Edit", new {id = item.VehicleId}) |
+                    @Html.ActionLink("Переглянути", "Details", new {id = item.VehicleId}) |
+                    @Html.ActionLink("Видалити", "Delete", new {id = item.VehicleId})
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>

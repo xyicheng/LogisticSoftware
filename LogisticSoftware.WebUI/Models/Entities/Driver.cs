@@ -12,17 +12,14 @@ namespace LogisticSoftware.WebUI.Models.Entities
         public int DriverId { get; set; }
 
         [Required(ErrorMessage = "П.І.Б. є обов'язковим полем")]
-        [DisplayName("Ім'я")]
+        [DisplayName("П.І.Б.")]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Дата народження є обов'язковим полем")]
         [DisplayName("Дата народдження")]
         public DateTime DateOfBirth { get; set; }
 
-        [DisplayName("Прикріплений ТЗ")]
-        public Vehicle Vehicle { get; set; }
-
-        [DisplayName("Наявні водійські категорії")]
-        public virtual ICollection<Category> Categories { get; set; }
+        [DisplayName("Прикріплені ТЗ")]
+        public virtual ICollection<Vehicle> Vehicles { get; set; }
     }
 }

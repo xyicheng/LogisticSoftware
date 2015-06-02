@@ -13,16 +13,6 @@
     <div>
         <hr/>
         <dl class="dl-horizontal">
-            @if (Model.Vehicle != null)
-            {
-                <dt>
-                   Прикріплений ТЗ
-                </dt>
-
-                <dd>
-                    @Model.Vehicle.ModelName + " " + Model.Vehicle.RegistrationNumber
-                </dd>
-            }
             <dt>
                 @Html.DisplayNameFor(model => model.Name)
             </dt>

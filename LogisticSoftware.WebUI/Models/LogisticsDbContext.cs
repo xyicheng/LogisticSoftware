@@ -12,7 +12,6 @@ namespace LogisticSoftware.WebUI.Models
         public LogisticsDbContext () : base("LogisticsDb")
         { }
 
-        public DbSet<Category> Categories { get; set; }
         public DbSet<FuelType> FuelTypes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Driver> Drivers { get; set; }
@@ -36,25 +35,12 @@ namespace LogisticSoftware.WebUI.Models
     {
         protected override void Seed(LogisticsDbContext context)
         {
-            context.FuelTypes.Add(new FuelType() { FuelName = "Дизельне паливо" });
+            var fuelType = new FuelType() {FuelName = "Дизельне паливо"};
+            context.FuelTypes.Add(fuelType);
             context.FuelTypes.Add(new FuelType() { FuelName = "Бензин А-80" });
             context.FuelTypes.Add(new FuelType() { FuelName = "Бензин А-92" });
             context.FuelTypes.Add(new FuelType() { FuelName = "Бензин А-95" });
             context.FuelTypes.Add(new FuelType() { FuelName = "Зріджений газ" });
-
-            context.Categories.Add(new Category() { CategoryName = "А1" });
-            context.Categories.Add(new Category() { CategoryName = "А" });
-            context.Categories.Add(new Category() { CategoryName = "B1" });
-            context.Categories.Add(new Category() { CategoryName = "B" });
-            context.Categories.Add(new Category() { CategoryName = "ВЕ" });
-            context.Categories.Add(new Category() { CategoryName = "C1" });
-            context.Categories.Add(new Category() { CategoryName = "С1Е" });
-            context.Categories.Add(new Category() { CategoryName = "C" });
-            context.Categories.Add(new Category() { CategoryName = "СЕ" });
-            context.Categories.Add(new Category() { CategoryName = "D1" });
-            context.Categories.Add(new Category() { CategoryName = "D1E" });
-            context.Categories.Add(new Category() { CategoryName = "D" });
-            context.Categories.Add(new Category() { CategoryName = "DE" });
             context.SaveChanges();
 
             context.Users.Add(new User()
@@ -71,14 +57,12 @@ namespace LogisticSoftware.WebUI.Models
                 Password = "secret"
             });
 
-            var cat = context.Categories.First(category => category.CategoryName == "C");
 
 
             var driver = new Driver
             {
                 DateOfBirth = new DateTime(1994, 6, 2),
                 Name = "Іванов І.І.",
-                Categories = new List<Category> { cat },
             };
             context.Drivers.Add(driver);
 
@@ -86,7 +70,6 @@ namespace LogisticSoftware.WebUI.Models
             {
                 DateOfBirth = new DateTime(1986, 7, 2),
                 Name = "Сергієв С.І.",
-                Categories = new List<Category> { cat },
             };
             context.Drivers.Add(driver);
 
@@ -141,6 +124,19 @@ namespace LogisticSoftware.WebUI.Models
                 Longitude = 32.053967,
             };
             context.Customers.Add(customer);
+
+            var vehicle = new Vehicle()
+            {
+                Driver = driver,
+                FuelType = fuelType,
+                Garage = garage,
+                LastInspection = new DateTime(2014, 3, 12),
+                ModelName = "Рено FH30",
+                RegistrationNumber = "АН3256ЕН",
+                WeightCapacity = 25000,
+                TrunkSize = 60000
+            };
+            context.Vehicles.Add(vehicle);
 
             base.Seed(context);
         }

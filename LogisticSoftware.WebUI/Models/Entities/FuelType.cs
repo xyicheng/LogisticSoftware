@@ -10,18 +10,10 @@ namespace LogisticSoftware.WebUI.Models.Entities
     {
         public int FuelTypeId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Назва пального є обов'язковим полем")]
         [DisplayName("Назва пального")]
         public string FuelName { get; set; }
     
         public virtual ICollection<Vehicle> Vehicles { get; set; }
-
-        public override string ToString()
-        {
-            return FuelName;
-        }
-
-        public FuelType()
-        { }
     }
 }
