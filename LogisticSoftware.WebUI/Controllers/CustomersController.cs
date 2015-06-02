@@ -18,7 +18,9 @@ namespace LogisticSoftware.WebUI.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            return View(db.Places.ToList());
+            ViewBag.Title = "Клієнти";
+            ViewBag.CreateString = "Додати клієнта";
+            return View("~/Views/Shared/Places/Index.cshtml", db.Customers.ToList());
         }
 
         // GET: Customers/Details/5
@@ -28,12 +30,13 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Places.Find(id);
+            Customer customer = db.Customers.Find(id);
             if (customer == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            ViewBag.Title = "Клієнт";
+            return View("~/Views/Shared/Places/Details.cshtml", customer);
         }
 
         // GET: Customers/Create
@@ -51,7 +54,7 @@ namespace LogisticSoftware.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Places.Add(customer);
+                db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +69,7 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Places.Find(id);
+            Customer customer = db.Customers.Find(id);
             if (customer == null)
             {
                 return HttpNotFound();
@@ -97,7 +100,7 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Places.Find(id);
+            Customer customer = db.Customers.Find(id);
             if (customer == null)
             {
                 return HttpNotFound();
@@ -110,8 +113,8 @@ namespace LogisticSoftware.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Customer customer = db.Places.Find(id);
-            db.Places.Remove(customer);
+            Customer customer = db.Customers.Find(id);
+            db.Customers.Remove(customer);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

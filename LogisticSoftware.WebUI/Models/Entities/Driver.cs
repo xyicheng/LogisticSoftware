@@ -15,7 +15,7 @@ namespace LogisticSoftware.WebUI.Models.Entities
         [DisplayName("Ім'я")]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Дата народження є обов'язковим полем")]
         [DisplayName("Дата народдження")]
         public DateTime DateOfBirth { get; set; }
 

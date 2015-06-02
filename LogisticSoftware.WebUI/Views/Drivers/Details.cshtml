@@ -4,46 +4,40 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div id="content">
-    <header>
-        <h2>Водій</h2>
-    </header>
-    
 
-    <div>
-        <hr/>
-        <dl class="dl-horizontal">
-            @if (Model.Vehicle != null)
-            {
-                <dt>
-                   Прикріплений ТЗ
-                </dt>
+<h2>Details</h2>
 
-                <dd>
-                    @Model.Vehicle.ModelName + " " + Model.Vehicle.RegistrationNumber
-                </dd>
-            }
-            <dt>
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
+<div>
+    <h4>Driver</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.RegistrationNumber)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.RegistrationNumber)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.DateOfBirth)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.DateOfBirth)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
 
-        </dl>
-    </div>
-    <hr/>
-    <p>
-        @Html.ActionLink("Редагувати", "Edit", new {id = Model.DriverId}) |
-        @Html.ActionLink("Повернутись до списку водіїв", "Index")
-    </p>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+    </dl>
 </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DriverId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

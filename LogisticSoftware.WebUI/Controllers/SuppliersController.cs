@@ -18,7 +18,9 @@ namespace LogisticSoftware.WebUI.Controllers
         // GET: Suppliers
         public ActionResult Index()
         {
-            return View(db.Places.ToList());
+            ViewBag.Title = "Постачальники";
+            ViewBag.CreateString = "Додати постачальника";
+            return View("~/Views/Shared/Places/Index.cshtml", db.Suppliers.ToList());
         }
 
         // GET: Suppliers/Details/5
@@ -28,12 +30,13 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Supplier supplier = db.Places.Find(id);
+            Supplier supplier = db.Suppliers.Find(id);
             if (supplier == null)
             {
                 return HttpNotFound();
             }
-            return View(supplier);
+            ViewBag.Title = "Постачальник";
+            return View("~/Views/Shared/Places/Details.cshtml", supplier);
         }
 
         // GET: Suppliers/Create
@@ -51,7 +54,7 @@ namespace LogisticSoftware.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Places.Add(supplier);
+                db.Suppliers.Add(supplier);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +69,7 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Supplier supplier = db.Places.Find(id);
+            Supplier supplier = db.Suppliers.Find(id);
             if (supplier == null)
             {
                 return HttpNotFound();
@@ -97,7 +100,7 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Supplier supplier = db.Places.Find(id);
+            Supplier supplier = db.Suppliers.Find(id);
             if (supplier == null)
             {
                 return HttpNotFound();
@@ -110,8 +113,8 @@ namespace LogisticSoftware.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Supplier supplier = db.Places.Find(id);
-            db.Places.Remove(supplier);
+            Supplier supplier = db.Suppliers.Find(id);
+            db.Suppliers.Remove(supplier);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
