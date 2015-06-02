@@ -18,11 +18,7 @@
     
     <ul id="nav">
         <li>
-            @Html.ActionLink("Логістика", "Index", "CurrentState")
-            <ul>
-                <li>@Html.ActionLink("Поставки", "Index", "Supplies")</li>
-                
-            </ul>
+            @Html.ActionLink("Поставки", "Index", "Supplies")
         </li>
         <li>
             @Html.ActionLink("Місця", "Index", "Places")
@@ -36,7 +32,7 @@
 
             @Html.ActionLink("Управління автопарком", "Index", "Vehicles")
             <ul>
-                <li>@Html.ActionLink("Гаражі", "Index", "Vehicles")</li>
+                <li>@Html.ActionLink("Гаражі", "Index", "Garages")</li>
                 <li>@Html.ActionLink("Транспортні засоби", "Index", "Vehicles")</li>
                 <li>@Html.ActionLink("Водії", "Index", "Drivers")</li>
             </ul>

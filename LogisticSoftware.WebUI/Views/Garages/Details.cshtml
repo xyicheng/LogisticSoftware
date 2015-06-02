@@ -1,0 +1,86 @@
+﻿@model LogisticSoftware.WebUI.Models.Entities.Garage
+
+@{
+    ViewBag.Title = "Гараж";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="content">
+    <header>
+        <h2>Гараж</h2>
+    </header>
+    <div class="lefted">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Region)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Region)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.District)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.District)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.City)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Street)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Street)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NumberOfBuilding)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumberOfBuilding)
+            </dd>
+
+        </dl>
+
+        <p>
+            @Html.ActionLink("Редагувати", "Edit", new { id = Model.PlaceId })
+        </p>
+        <br />
+        <p>
+            @Html.ActionLink("Вернтуись до списку гаражів", "Index")
+        </p>
+    </div>
+
+
+    <script type="text/javascript">
+        function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(@Model.Latitude, @Model.Longitude),
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas"),
+                mapOptions);
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(@Model.Latitude, @Model.Longitude),
+                map: map,
+                title: 'Гараж №1'
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+    <div id="map_canvas" style="width: 800px; height: 500px; float: right;"></div>
+</div>

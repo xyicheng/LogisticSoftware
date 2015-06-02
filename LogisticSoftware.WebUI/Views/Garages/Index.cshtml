@@ -1,0 +1,62 @@
+﻿@model IEnumerable<LogisticSoftware.WebUI.Models.Entities.Garage>
+
+@{
+    ViewBag.Title = "Гаражі";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="content">
+    <header>
+        <h2>Гаражі</h2>
+
+        <p>
+            @Html.ActionLink("Додати гараж", "Create")
+        </p>
+    </header>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.District)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfBuilding)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Region)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.District)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Street)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfBuilding)
+                </td>
+                <td>
+                    @Html.ActionLink("Редагувати", "Edit", new {id = item.PlaceId}) |
+                    @Html.ActionLink("Переглянути", "Details", new {id = item.PlaceId}) |
+                    @Html.ActionLink("Видалити", "Delete", new {id = item.PlaceId})
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

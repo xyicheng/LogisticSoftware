@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using LogisticSoftware.WebUI.Models.Entities;
 
 namespace LogisticSoftware.WebUI.Models
@@ -18,6 +19,7 @@ namespace LogisticSoftware.WebUI.Models
         public DbSet<Item> Items { get; set; }
         public DbSet<ItemInSupply> ItemsInSupplies { get; set; }
         public DbSet<Place> Places { get; set; }
+        public DbSet<Garage> Garages { get; set; }
         public DbSet<Supply> Supplies { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
 
@@ -27,37 +29,6 @@ namespace LogisticSoftware.WebUI.Models
     {
         protected override void Seed(LogisticsDbContext context)
         {
-            context.Users.Add(new User()
-            {
-                Login = "admin",
-                Name = "Петров П.П.",
-                Password = "secret"
-            });
-            context.Users.Add(new User()
-            {
-                Login = "user1",
-                Name = "Іванов І. І.",
-                Password = "secret"
-            });
-            var cat = new Category() { CategoryName = "С" };
-            context.Categories.Add(cat);
-            context.SaveChanges();
-            var driver = new Driver
-            {
-                DateOfBirth = new DateTime(1994, 6, 2),
-                Name = "Іванов І.І.",
-                Categories = new List<Category> { cat },
-            };
-            context.Drivers.Add(driver);
-
-            driver = new Driver
-            {
-                DateOfBirth = new DateTime(1986, 7, 2),
-                Name = "Сергієв С.І.",
-                Categories = new List<Category> { cat },
-            };
-            context.Drivers.Add(driver);
-
             context.FuelTypes.Add(new FuelType() { FuelName = "Дизельне паливо" });
             context.FuelTypes.Add(new FuelType() { FuelName = "Бензин А-80" });
             context.FuelTypes.Add(new FuelType() { FuelName = "Бензин А-92" });
@@ -75,8 +46,54 @@ namespace LogisticSoftware.WebUI.Models
             context.Categories.Add(new Category() { CategoryName = "СЕ" });
             context.Categories.Add(new Category() { CategoryName = "D1" });
             context.Categories.Add(new Category() { CategoryName = "D1E" });
-            context.Categories.Add(new Category() { CategoryName = "D" });   
+            context.Categories.Add(new Category() { CategoryName = "D" });
             context.Categories.Add(new Category() { CategoryName = "DE" });
+            context.SaveChanges();
+
+            context.Users.Add(new User()
+            {
+                Login = "admin",
+                Name = "Петров П.П.",
+                Password = "secret"
+            });
+
+            context.Users.Add(new User()
+            {
+                Login = "user1",
+                Name = "Іванов І. І.",
+                Password = "secret"
+            });
+
+            var cat = context.Categories.First(category => category.CategoryName == "C");
+
+
+            var driver = new Driver
+            {
+                DateOfBirth = new DateTime(1994, 6, 2),
+                Name = "Іванов І.І.",
+                Categories = new List<Category> { cat },
+            };
+            context.Drivers.Add(driver);
+
+            driver = new Driver
+            {
+                DateOfBirth = new DateTime(1986, 7, 2),
+                Name = "Сергієв С.І.",
+                Categories = new List<Category> { cat },
+            };
+            context.Drivers.Add(driver);
+
+            var garage = new Garage()
+            {
+                Region = "Черкаська",
+                District = "Соснівський",
+                City = "Черкаси",
+                Street = "Хрещатик",
+                NumberOfBuilding = "64",
+                Latitude = 49.45445,
+                Longitude = 32.044730,
+            };
+            context.Garages.Add(garage);
 
             base.Seed(context);
         }

@@ -21,6 +21,10 @@ body {
     width: 95%;
 }
 
+#content .lefted {
+    float: left;
+}
+
 
 #content header h2 {
     font-size: 2em;
