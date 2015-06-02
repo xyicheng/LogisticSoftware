@@ -11,6 +11,7 @@ using LogisticSoftware.WebUI.Models.Entities;
 
 namespace LogisticSoftware.WebUI.Controllers
 {
+    [Authorize]
     public class DriversController : Controller
     {
         private LogisticsDbContext db = new LogisticsDbContext();

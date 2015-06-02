@@ -9,27 +9,22 @@ namespace LogisticSoftware.WebUI.Models.Entities
     [Table("Vehicles")]
     public class Vehicle
     {
-        
+
         public int VehicleId { get; set; }
 
         [DisplayName("Реєстраційний номер")]
-        [Required]
         public string RegistrationNumber { get; set; }
 
         [DisplayName("Модель автомобіля")]
-        [Required]
         public string ModelName { get; set; }
 
         [DisplayName("Дата останнього тех. огляду")]
-        [Required]
         public DateTime LastInspection { get; set; }
 
         [DisplayName("Максимальне навантаження")]
-        [Required]
         public double WeightCapacity { get; set; }
 
         [DisplayName("Розмір багажного відділення")]
-        [Required]
         public double TrunkSize { get; set; }
 
         [DisplayName("Прикріплений водій")]

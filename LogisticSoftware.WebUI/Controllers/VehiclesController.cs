@@ -11,107 +11,112 @@ using LogisticSoftware.WebUI.Models.Entities;
 
 namespace LogisticSoftware.WebUI.Controllers
 {
-    public class SuppliersController : Controller
+    public class VehiclesController : Controller
     {
         private LogisticsDbContext db = new LogisticsDbContext();
 
-        // GET: Suppliers
+        // GET: Vehicles
         public ActionResult Index()
         {
-            return View(db.Places.ToList());
+            var vehicles = db.Vehicles.Include(v => v.Driver);
+            return View(vehicles.ToList());
         }
 
-        // GET: Suppliers/Details/5
+        // GET: Vehicles/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Supplier supplier = db.Places.Find(id);
-            if (supplier == null)
+            Vehicle vehicle = db.Vehicles.Find(id);
+            if (vehicle == null)
             {
                 return HttpNotFound();
             }
-            return View(supplier);
+            return View(vehicle);
         }
 
-        // GET: Suppliers/Create
+        // GET: Vehicles/Create
         public ActionResult Create()
         {
+            ViewBag.DriverId = new SelectList(db.Drivers, "DriverId", "Name");
             return View();
         }
 
-        // POST: Suppliers/Create
+        // POST: Vehicles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Supplier supplier)
+        public ActionResult Create([Bind(Include = "DriverId,VehicleId,RegistrationNumber,ModelName,LastInspection,WeightCapacity,TrunkSize")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
-                db.Places.Add(supplier);
+                db.Vehicles.Add(vehicle);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(supplier);
+            ViewBag.DriverId = new SelectList(db.Drivers, "DriverId", "Name", vehicle.DriverId);
+            return View(vehicle);
         }
 
-        // GET: Suppliers/Edit/5
+        // GET: Vehicles/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Supplier supplier = db.Places.Find(id);
-            if (supplier == null)
+            Vehicle vehicle = db.Vehicles.Find(id);
+            if (vehicle == null)
             {
                 return HttpNotFound();
             }
-            return View(supplier);
+            ViewBag.DriverId = new SelectList(db.Drivers, "DriverId", "Name", vehicle.DriverId);
+            return View(vehicle);
         }
 
-        // POST: Suppliers/Edit/5
+        // POST: Vehicles/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Supplier supplier)
+        public ActionResult Edit([Bind(Include = "DriverId,VehicleId,RegistrationNumber,ModelName,LastInspection,WeightCapacity,TrunkSize")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(supplier).State = EntityState.Modified;
+                db.Entry(vehicle).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(supplier);
+            ViewBag.DriverId = new SelectList(db.Drivers, "DriverId", "Name", vehicle.DriverId);
+            return View(vehicle);
         }
 
-        // GET: Suppliers/Delete/5
+        // GET: Vehicles/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Supplier supplier = db.Places.Find(id);
-            if (supplier == null)
+            Vehicle vehicle = db.Vehicles.Find(id);
+            if (vehicle == null)
             {
                 return HttpNotFound();
             }
-            return View(supplier);
+            return View(vehicle);
         }
 
-        // POST: Suppliers/Delete/5
+        // POST: Vehicles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Supplier supplier = db.Places.Find(id);
-            db.Places.Remove(supplier);
+            Vehicle vehicle = db.Vehicles.Find(id);
+            db.Vehicles.Remove(vehicle);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
