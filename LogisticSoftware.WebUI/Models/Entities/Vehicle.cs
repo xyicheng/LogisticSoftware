@@ -50,7 +50,6 @@ namespace LogisticSoftware.WebUI.Models.Entities
         [DisplayName("Тип пального")]
         public int FuelTypeId { get; set; }
 
-        public virtual ICollection<Vehicle> Vehicles { get; set; } 
-
+        public virtual ICollection<ItemInSupply> ItemInSupply { get; set; }
     }
 }
