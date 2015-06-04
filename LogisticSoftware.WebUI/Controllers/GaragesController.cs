@@ -71,7 +71,8 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 return HttpNotFound();
             }
-            return View(garage);
+            ViewBag.Title = "Редагувати гараж";
+            return View("~/Views/Shared/Places/Edit.cshtml", garage);
         }
 
         // POST: Garages/Edit/5
@@ -79,7 +80,7 @@ namespace LogisticSoftware.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PlaceId,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Garage garage)
+        public ActionResult Edit([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Garage garage)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +88,8 @@ namespace LogisticSoftware.WebUI.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(garage);
+            ViewBag.Title = "Редагувати гараж";
+            return View("~/Views/Shared/Places/Edit.cshtml", garage);
         }
 
         // GET: Garages/Delete/5
