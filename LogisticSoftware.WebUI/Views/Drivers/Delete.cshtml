@@ -14,15 +14,19 @@
 
         <hr/>
         <dl class="dl-horizontal">
-            @if (Model.Vehicle != null)
+            @if (Model.Vehicles != null)
             {
                 <dt>
-                    Прикріплений ТЗ
+                    Прикріплені ТЗ
                 </dt>
+                foreach (var vehicle in Model.Vehicles)
+                {
+                    <dd>
+                        @(vehicle.ModelName + " " + vehicle.RegistrationNumber)
+                    </dd>
+                    
+                }
 
-                <dd>
-                    @Model.Vehicle.ModelName + " " + Model.Vehicle.RegistrationNumber
-                </dd>
             }
 
             <dt>

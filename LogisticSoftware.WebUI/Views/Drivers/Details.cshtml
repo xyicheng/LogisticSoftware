@@ -13,6 +13,20 @@
     <div>
         <hr/>
         <dl class="dl-horizontal">
+            @if (Model.Vehicles != null)
+            {
+                <dt>
+                    Прикріплені ТЗ
+                </dt>
+                foreach (var vehicle in Model.Vehicles)
+                {
+                    <dd>
+                        @vehicle.ModelName + " " + Model.Vehicle.RegistrationNumber
+                    </dd>
+
+                }
+
+            }
             <dt>
                 @Html.DisplayNameFor(model => model.Name)
             </dt>

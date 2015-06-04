@@ -27,7 +27,7 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 if (_authProvider.Authenticate(model.UserName, model.Password))
                 {
-                    return Redirect(returnUrl ?? Url.Action("Index","CurrentState"));
+                    return Redirect(returnUrl ?? Url.Action("Index","Supplies"));
                 }
                 ModelState.AddModelError("", "Неправильний логін чи пароль користувача");
                 return View();
