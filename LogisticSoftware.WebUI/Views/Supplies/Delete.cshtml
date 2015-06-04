@@ -1,0 +1,73 @@
+﻿@model LogisticSoftware.WebUI.Models.Entities.Supply
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Supply</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.From.PlaceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.From.PlaceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.To.PlaceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.To.PlaceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.RegistrationNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.RegistrationNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToPlaceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToPlaceId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

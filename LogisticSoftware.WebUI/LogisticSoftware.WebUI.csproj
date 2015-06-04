@@ -146,7 +146,6 @@
     <Compile Include="Models\Entities\Item.cs" />
     <Compile Include="Models\Entities\Place.cs" />
     <Compile Include="Models\Entities\Supplier.cs" />
-    <Compile Include="Models\Entities\Supply.cs" />
     <Compile Include="Models\Entities\User.cs" />
     <Compile Include="Models\Entities\Vehicle.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
@@ -232,6 +231,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Vehicles\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Supplies\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Supplies\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Supplies\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Supplies\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Supplies\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
