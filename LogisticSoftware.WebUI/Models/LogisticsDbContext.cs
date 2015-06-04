@@ -24,10 +24,11 @@ namespace LogisticSoftware.WebUI.Models
 
         public DbSet<Vehicle> Vehicles { get; set; }
 
-        public DbSet<Item> Items { get; set; }
-        public DbSet<ItemInSupply> ItemsInSupplies { get; set; }
-        
         public DbSet<Supply> Supplies { get; set; }
+
+        public DbSet<Item> Items { get; set; }
+        
+        
         
 
     }

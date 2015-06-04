@@ -75,7 +75,8 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 return HttpNotFound();
             }
-            return View(factory);
+            ViewBag.Title = "Редагувати виробничу потужність";
+            return View("~/Views/Shared/Places/Edit.cshtml", factory);
         }
 
         // POST: Factories/Edit/5
@@ -91,7 +92,8 @@ namespace LogisticSoftware.WebUI.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(factory);
+            ViewBag.Title = "Редагувати виробничу потужність";
+            return View("~/Views/Shared/Places/Edit.cshtml", factory);
         }
 
         // GET: Factories/Delete/5

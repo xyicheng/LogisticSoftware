@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,13 +9,19 @@ namespace LogisticSoftware.WebUI.Models.Entities
     {
     
         public int ItemId { get; set; }
+
+        public int NumberOfItems { get; set; }
+
         public string ItemName { get; set; }
-        public double Weight { get; set; }
-        public double ItemSizeX { get; set; }
-        public double ItemSizeY { get; set; }
-        public double ItemSizeZ { get; set; }
-    
-        public virtual ICollection<ItemInSupply> ItemInSupply { get; set; }
+        public double SingleItemWeight { get; set; }
+
+        public DateTime ProductionDate { get; set; }
+        public DateTime ExpirationDate { get; set; }
+
+        public int ItemsQuantityInPack { get; set; }
+
+
+        public virtual Supply Supply { get; set; }
 
         public override string ToString()
         {

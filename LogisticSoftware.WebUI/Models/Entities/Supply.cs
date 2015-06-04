@@ -9,17 +9,16 @@ namespace LogisticSoftware.WebUI.Models.Entities
     {
     
         public int SupplyId { get; set; }
-        public decimal SupplieCost { get; set; }
-        public DateTime BeginTime { get; set; }
-        public DateTime EndTime { get; set; }
-    
-        public virtual ICollection<ItemInSupply> ItemInSupply { get; set; }
-        public virtual Route Route { get; set; }
+        public decimal Cost { get; set; }
+        public DateTime Date { get; set; }
+        
+        public virtual Vehicle Vehicle { get; set; }
+        public int VehicleId { get; set; }
 
-        public override string ToString()
-        {
-            return BeginTime.ToString("dd.MM.yyyy") + ":" + Route;
-        }
+        public virtual Place From { get; set; }
+        public virtual Place To { get; set; }
+
+        public virtual ICollection<Item> Items { get; set; }
 
     }
 }

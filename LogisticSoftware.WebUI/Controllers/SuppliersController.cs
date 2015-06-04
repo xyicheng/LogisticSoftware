@@ -75,7 +75,8 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 return HttpNotFound();
             }
-            return View(supplier);
+            ViewBag.Title = "Редагувати постачальника";
+            return View("~/Views/Shared/Places/Edit.cshtml", supplier);
         }
 
         // POST: Suppliers/Edit/5
@@ -91,7 +92,8 @@ namespace LogisticSoftware.WebUI.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(supplier);
+            ViewBag.Title = "Редагувати постачальника";
+            return View("~/Views/Shared/Places/Edit.cshtml", supplier);
         }
 
         // GET: Suppliers/Delete/5
