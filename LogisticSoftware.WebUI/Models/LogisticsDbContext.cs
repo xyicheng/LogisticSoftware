@@ -15,6 +15,7 @@ namespace LogisticSoftware.WebUI.Models
         public DbSet<FuelType> FuelTypes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Driver> Drivers { get; set; }
+        
         public DbSet<Place> Places { get; set; }
         public DbSet<Garage> Garages { get; set; }
         public DbSet<Factory> Factories { get; set; }

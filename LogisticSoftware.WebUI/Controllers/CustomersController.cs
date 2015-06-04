@@ -19,7 +19,9 @@ namespace LogisticSoftware.WebUI.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            return View(db.Customers.ToList());
+            ViewBag.Title = "Клієнти";
+            ViewBag.CreateString = "Додати клієнта";
+            return View("~/Views/Shared/Places/Index.cshtml", db.Customers.ToList());
         }
 
         // GET: Customers/Details/5
