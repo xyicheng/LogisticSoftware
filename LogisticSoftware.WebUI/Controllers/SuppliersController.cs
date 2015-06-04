@@ -36,7 +36,8 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 return HttpNotFound();
             }
-            return View(supplier);
+            ViewBag.Title = "Постачальник";
+            return View("~/Views/Shared/Places/Details.cshtml", supplier);
         }
 
         // GET: Suppliers/Create
