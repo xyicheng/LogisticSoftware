@@ -20,16 +20,18 @@ namespace LogisticSoftware.WebUI.Models.Entities
         public int VehicleId { get; set; }
 
         [ForeignKey("FromPlaceId")]
+        
         public virtual Place From { get; set; }
         [Required]
         public int FromPlaceId { get; set; }
 
         [ForeignKey("ToPlaceId")]
+        
         public virtual Place To { get; set; }
         [Required]
         public int ToPlaceId { get; set; }
 
-        public virtual ICollection<ItemInSupply> ItemInSupply { get; set; }
+        public virtual ICollection<Item> Items { get; set; }
 
         
 
