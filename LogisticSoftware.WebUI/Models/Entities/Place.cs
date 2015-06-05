@@ -48,10 +48,10 @@ namespace LogisticSoftware.WebUI.Models.Entities
 
         [ScaffoldColumn(false)]
         [InverseProperty("From")]
-        public virtual ICollection<Place> WhenFrom { get; set; }
+        public virtual ICollection<Supply> WhenFrom { get; set; }
 
         [ScaffoldColumn(false)]
         [InverseProperty("To")]
-        public virtual ICollection<Place> WhenTo { get; set; }
+        public virtual ICollection<Supply> WhenTo { get; set; }
     }
 }

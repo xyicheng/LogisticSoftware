@@ -1,0 +1,58 @@
+﻿@model IEnumerable<LogisticSoftware.WebUI.Models.Entities.Supply>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.From.PlaceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.To.PlaceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle.RegistrationNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.From.PlaceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.To.PlaceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle.RegistrationNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SupplyId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SupplyId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SupplyId })
+        </td>
+    </tr>
+}
+
+</table>
