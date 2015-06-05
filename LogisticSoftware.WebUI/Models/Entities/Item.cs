@@ -10,23 +10,17 @@ namespace LogisticSoftware.WebUI.Models.Entities
     
         public int ItemId { get; set; }
 
+        public string ItemName { get; set; }
+
         public int NumberOfItems { get; set; }
 
-        public string ItemName { get; set; }
+        
         public double SingleItemWeight { get; set; }
-
-        public DateTime ProductionDate { get; set; }
-        public DateTime ExpirationDate { get; set; }
 
         public int ItemsQuantityInPack { get; set; }
 
-
-        public virtual Supply Supply { get; set; }
-
-        public override string ToString()
-        {
-            return ItemName;
-        }
+        public DateTime ProductionDate { get; set; }
+        public DateTime ExpirationDate { get; set; }
 
     }
 }
