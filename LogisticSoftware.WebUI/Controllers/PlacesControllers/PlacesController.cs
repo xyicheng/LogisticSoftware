@@ -13,17 +13,29 @@ namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
 {
     public abstract class PlacesController : Controller
     {
-        private static LogisticsDbContext db = new LogisticsDbContext();
+        private LogisticsDbContext db = new LogisticsDbContext();
 
         private const string IndexUrl = "~/Views/Shared/Places/Index.cshtml";
         private const string DetailsUrl = "~/Views/Shared/Places/Details.cshtml";
         private const string EditUrl = "~/Views/Shared/Places/Edit.cshtml";
+        private const string CreateUrl = "~/Views/Shared/Places/Create.cshtml";
+        private const string DeleteUrl = "~/Views/Shared/Places/Delete.cshtml";
         protected string IndexTitle = "Місця";
         protected string CreateString = "Додати місце";
         protected string DatailsTitle = "Місце";
         protected string EditTitle = "Редагувати місце";
+        
 
-        protected DbSet PlacesTable = db.Places;
+        protected string DeleteTitle = "Видалити місце";
+        protected string DeleteConfirmation = "Ви впевені, що хочете видалити місце?";
+        protected string CreateTitle = "Додати місце";
+
+        protected DbSet PlacesTable;
+
+        public delegate void PlaceAdder(Place place);
+        public event PlaceAdder PlaceAdderEvent;
+        public delegate void PlaceRemover(Place place);
+        public event PlaceRemover PlaceRemoverEvent;
 
         // GET: Places
         public ActionResult Index()
@@ -52,7 +64,8 @@ namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
         // GET: Places/Create
         public ActionResult Create()
         {
-            return View();
+            ViewBag.Title = CreateTitle;
+            return View(CreateUrl);
         }
 
         // POST: Places/Create
@@ -64,12 +77,11 @@ namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
         {
             if (ModelState.IsValid)
             {
-                PlacesTable.Add(place);
-                db.SaveChanges();
+                PlaceAdderEvent(place);
                 return RedirectToAction("Index");
             }
-
-            return View(place);
+            ViewBag.Title = CreateTitle;
+            return View(CreateUrl,place);
         }
 
         // GET: Places/Edit/5
@@ -97,7 +109,9 @@ namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
         {
             if (ModelState.IsValid)
             {
+                
                 db.Entry(place).State = EntityState.Modified;
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -117,7 +131,9 @@ namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
             {
                 return HttpNotFound();
             }
-            return View(place);
+            ViewBag.Title = DeleteTitle;
+            ViewBag.DeleteConfirmation = DeleteConfirmation;
+            return View(DeleteUrl,place);
         }
 
         // POST: Places/Delete/5
@@ -125,10 +141,18 @@ namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Place place = db.Places.Find(id);
-            PlacesTable.Remove(place);
-            db.SaveChanges();
+            var place = (Place)PlacesTable.Find(id);
+            PlaceRemoverEvent(place);
             return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

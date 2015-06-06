@@ -10,15 +10,37 @@ namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
     [Authorize]
     public class CustomersController : PlacesController
     {
-        private LogisticsDbContext db = new LogisticsDbContext();
+        private LogisticsDbContext _db = new LogisticsDbContext();
 
         public CustomersController()
         {
-            PlacesTable = db.Customers;
+            PlacesTable = _db.Customers;
             IndexTitle = "Клієнти";
             CreateString = "Додати клієнта";
             DatailsTitle = "Клієнт";
             EditTitle = "Редагувати клієнта";
+
+            DeleteTitle = "Видалити клієнта";
+            DeleteConfirmation = "Ви впевені, що хочете видалити клієнта?";
+            CreateTitle = "Додати клієнта";
+
+            PlaceAdderEvent += delegate (Place place) {
+                PlacesTable.Add(new Factory
+                {
+                    PlaceId = place.PlaceId,
+                    PlaceName = place.PlaceName,
+                    Address = place.Address,
+                    Latitude = place.Latitude,
+                    Longitude = place.Longitude
+                });
+                _db.SaveChanges();
+            };
+
+            PlaceRemoverEvent += delegate (Place place) {
+                var garage = PlacesTable.Find(place.PlaceId);
+                PlacesTable.Remove(garage);
+                _db.SaveChanges();
+            };
         }
     }
 }

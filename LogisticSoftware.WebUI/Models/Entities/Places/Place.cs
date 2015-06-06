@@ -20,12 +20,12 @@ namespace LogisticSoftware.WebUI.Models.Entities.Places
         public string Address { get; set; }
 
         [ScaffoldColumn(false)]
-        [Required]
+        [Required(ErrorMessage = "Географічні координати є обов'язковими")]
         [DisplayName("Широта")]
         public double Latitude { get; set; }
 
         [ScaffoldColumn(false)]
-        [Required]
+        [Required(ErrorMessage = " ")]
         [DisplayName("Довгота")]
         public double Longitude { get; set; }
 
