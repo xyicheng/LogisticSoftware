@@ -19,6 +19,7 @@ namespace LogisticSoftware.WebUI.Models.Entities
 
         [DisplayName("Дата поставки")]
         [Required(ErrorMessage = "Дата поставки є обов'язковим полем")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime Date { get; set; }
         
         public virtual ICollection<MapPointOnRoute> MapPointsOnRoute { get; set; } 

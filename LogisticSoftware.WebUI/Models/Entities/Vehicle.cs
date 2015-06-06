@@ -23,6 +23,7 @@ namespace LogisticSoftware.WebUI.Models.Entities
 
         [DisplayName("Дата останнього тех. огляду")]
         [Required(ErrorMessage = "Дата останнього тех. огляду є обов'язковим полем")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime LastInspection { get; set; }
 
         [DisplayName("Максимальне навантаження (кг)")]

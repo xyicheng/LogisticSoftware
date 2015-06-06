@@ -44,7 +44,7 @@
             var directionsDisplay = new google.maps.DirectionsRenderer();// also, constructor can get "DirectionsRendererOptions" object
             directionsDisplay.setMap(map); // map should be already initialized.
 
-            @if(Model.MapPointsOnRoute != null)
+            @if(Model.MapPointsOnRoute != null && Model.MapPointsOnRoute.Any())
             {
                 var route = Model.MapPointsOnRoute.OrderBy(p => p.PointNumber).ToList();
                 var start = route[0];

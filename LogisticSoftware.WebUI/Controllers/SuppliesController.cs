@@ -47,7 +47,7 @@ namespace LogisticSoftware.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SupplyId,Cost,Date")] Supply supply)
+        public ActionResult Create([Bind(Include = "SupplyId,Target,Date")] Supply supply)
         {
             if (ModelState.IsValid)
             {

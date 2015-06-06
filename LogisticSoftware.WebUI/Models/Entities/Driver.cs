@@ -17,6 +17,7 @@ namespace LogisticSoftware.WebUI.Models.Entities
 
         [Required(ErrorMessage = "Дата народження є обов'язковим полем")]
         [DisplayName("Дата народдження")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime DateOfBirth { get; set; }
 
         [DisplayName("Прикріплені ТЗ")]
