@@ -1,4 +1,4 @@
-﻿@model IEnumerable<LogisticSoftware.WebUI.Models.Entities.Place>
+﻿@model IEnumerable<LogisticSoftware.WebUI.Models.Entities.Places.Place>
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,19 +17,7 @@
                 @Html.DisplayNameFor(model => model.PlaceName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Region)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.District)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Street)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumberOfBuilding)
+                @Html.DisplayNameFor(model => model.Address)
             </th>
             <th></th>
         </tr>
@@ -41,19 +29,7 @@
                     @Html.DisplayFor(modelItem => item.PlaceName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Region)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.District)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.City)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Street)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NumberOfBuilding)
+                    @Html.DisplayFor(modelItem => item.Address)
                 </td>
                 <td>
                     @Html.ActionLink("Редагувати", "Edit", new {id = item.PlaceId}) |

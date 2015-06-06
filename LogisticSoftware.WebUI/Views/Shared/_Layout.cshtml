@@ -21,11 +21,19 @@
             @Html.ActionLink("Поставки", "Index", "Supplies")
         </li>
         <li>
-            @Html.ActionLink("Місця", "Index", "Factories")
+            @Html.ActionLink("Треті сторони", "Index", "Factories")
             <ul>
-                <li>@Html.ActionLink("Виробничі потужності", "Index", "Factories")</li>
                 <li>@Html.ActionLink("Постачальники", "Index", "Suppliers")</li>
                 <li>@Html.ActionLink("Покупці", "Index", "Customers")</li>
+            </ul>
+        </li>
+        <li>
+            @Html.ActionLink("Компанія", "Index", "Factories")
+            <ul>
+                <li>@Html.ActionLink("Виробничі потужності", "Index", "Factories")</li>
+                <li>@Html.ActionLink("Склади", "Index", "Warehouses")</li>
+                <li>@Html.ActionLink("Ферми", "Index", "Farms")</li>
+                <li>@Html.ActionLink("Зерносховища", "Index", "Granaries")</li>
             </ul>
         </li>
         <li>

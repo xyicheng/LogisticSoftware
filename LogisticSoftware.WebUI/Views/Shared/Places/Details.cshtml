@@ -1,4 +1,4 @@
-﻿@model LogisticSoftware.WebUI.Models.Entities.Place
+﻿@model LogisticSoftware.WebUI.Models.Entities.Places.Place
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,43 +18,11 @@
                 @Html.DisplayFor(model => model.PlaceName)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.Region)
+                @Html.DisplayNameFor(model => model.Address)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Region)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.District)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.District)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.City)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.City)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Street)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Street)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.NumberOfBuilding)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.NumberOfBuilding)
+                @Html.DisplayFor(model => model.Address)
             </dd>
 
         </dl>

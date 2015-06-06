@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using LogisticSoftware.WebUI.Models;
 using LogisticSoftware.WebUI.Models.Entities;
+using LogisticSoftware.WebUI.Models.Entities.Places;
 
 namespace LogisticSoftware.WebUI.Controllers
 {

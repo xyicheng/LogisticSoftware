@@ -23,10 +23,6 @@ namespace LogisticSoftware.WebUI.Models.Entities
 
         public virtual Supply Supply { get; set; }
 
-        public override string ToString()
-        {
-            return ItemName;
-        }
 
     }
 }

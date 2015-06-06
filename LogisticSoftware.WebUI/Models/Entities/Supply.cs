@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Web.UI.WebControls;
+using LogisticSoftware.WebUI.Models.Entities.Places;
 
 namespace LogisticSoftware.WebUI.Models.Entities
 {

@@ -5,6 +5,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web.UI.WebControls;
 using LogisticSoftware.WebUI.Models.Entities;
+using LogisticSoftware.WebUI.Models.Entities.Places;
 
 namespace LogisticSoftware.WebUI.Models
 {
@@ -86,11 +87,7 @@ namespace LogisticSoftware.WebUI.Models
             var garage = new Garage()
             {
                 PlaceName = "Гараж №1",
-                Region = "Черкаська",
-                District = "Соснівський",
-                City = "Черкаси",
-                Street = "Хрещатик",
-                NumberOfBuilding = "64",
+                Address = "м. Черкаси, вул. Хрещатик 64",
                 Latitude = 49.45445,
                 Longitude = 32.044730,
             };
@@ -99,11 +96,7 @@ namespace LogisticSoftware.WebUI.Models
             var factory = new Factory()
             {
                 PlaceName = "Фабрика №1",
-                Region = "Черкаська",
-                District = "Придніпровський",
-                City = "Черкаси",
-                Street = "пр. Хіміків",
-                NumberOfBuilding = "32",
+                Address = "м. Черкаси, пр. Хіміків 32",
                 Latitude = 49.401511,
                 Longitude = 32.053967,
             };
@@ -112,11 +105,7 @@ namespace LogisticSoftware.WebUI.Models
             var supplier = new Supplier()
             {
                 PlaceName = "Постачальник №1",
-                Region = "Черкаська",
-                District = "Придніпровський",
-                City = "Черкаси",
-                Street = "пр. Хіміків",
-                NumberOfBuilding = "32",
+                Address = "м. Черкаси, пр. Хіміків 32",
                 Latitude = 49.401511,
                 Longitude = 32.053967,
             };
@@ -125,11 +114,7 @@ namespace LogisticSoftware.WebUI.Models
             var customer = new Customer()
             {
                 PlaceName = "Клієнт №1",
-                Region = "Черкаська",
-                District = "Придніпровський",
-                City = "Черкаси",
-                Street = "пр. Хіміків",
-                NumberOfBuilding = "32",
+                Address = "м. Черкаси, пр. Хіміків 32",
                 Latitude = 49.401511,
                 Longitude = 32.053967,
             };
