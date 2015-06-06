@@ -40,10 +40,10 @@ namespace LogisticSoftware.WebUI.Models.Entities
         public int DriverId { get; set; }
 
         
-        [ForeignKey("PlaceId")]
+        [ForeignKey("MapPointId")]
         public virtual Garage Garage { get; set; }
         [DisplayName("Прикріплений до гаража")]
-        public int PlaceId { get; set; }
+        public int MapPointId { get; set; }
 
         
         [ForeignKey("FuelTypeId")]

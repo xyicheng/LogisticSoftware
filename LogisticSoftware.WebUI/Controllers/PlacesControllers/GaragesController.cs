@@ -27,7 +27,7 @@ namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
             PlaceAdderEvent += delegate(Place place) {
                 PlacesTable.Add(new Garage
                 {
-                    PlaceId = place.PlaceId,
+                    MapPointId = place.MapPointId,
                     PlaceName = place.PlaceName,
                     Address = place.Address,
                     Latitude = place.Latitude,
@@ -37,7 +37,7 @@ namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
             };
 
             PlaceRemoverEvent += delegate(Place place) {
-                var garage = PlacesTable.Find(place.PlaceId);
+                var garage = PlacesTable.Find(place.MapPointId);
                 PlacesTable.Remove(garage);
                 _db.SaveChanges();
             };

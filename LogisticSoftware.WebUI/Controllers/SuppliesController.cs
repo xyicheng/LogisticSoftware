@@ -59,8 +59,8 @@ namespace LogisticSoftware.WebUI.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.FromPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", supply.FromPlaceId);
-            ViewBag.ToPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", supply.ToPlaceId);
+            ViewBag.FromPlaceId = new SelectList(db.Places, "MapPointId", "PlaceName", supply.FromMapPointId);
+            ViewBag.ToPlaceId = new SelectList(db.Places, "MapPointId", "PlaceName", supply.ToMapPointId);
             return View(supply);
         }
 
@@ -76,8 +76,8 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.FromPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", supply.FromPlaceId);
-            ViewBag.ToPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", supply.ToPlaceId);
+            ViewBag.FromPlaceId = new SelectList(db.Places, "MapPointId", "PlaceName", supply.FromMapPointId);
+            ViewBag.ToPlaceId = new SelectList(db.Places, "MapPointId", "PlaceName", supply.ToMapPointId);
             return View(supply);
         }
 
@@ -94,8 +94,8 @@ namespace LogisticSoftware.WebUI.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.FromPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", supply.FromPlaceId);
-            ViewBag.ToPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", supply.ToPlaceId);
+            ViewBag.FromPlaceId = new SelectList(db.Places, "MapPointId", "PlaceName", supply.FromMapPointId);
+            ViewBag.ToPlaceId = new SelectList(db.Places, "MapPointId", "PlaceName", supply.ToMapPointId);
             return View(supply);
         }
 

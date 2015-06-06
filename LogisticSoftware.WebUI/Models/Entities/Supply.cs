@@ -19,19 +19,15 @@ namespace LogisticSoftware.WebUI.Models.Entities
         
         public virtual ICollection<ItemInSupply> ItemsInSupply { get; set; }
 
-        [ForeignKey("FromPlaceId")]
-        
+        [ForeignKey("FromMapPointId")]
         public virtual Place From { get; set; }
         [Required]
-        public int FromPlaceId { get; set; }
+        public int FromMapPointId { get; set; }
 
-        [ForeignKey("ToPlaceId")]
-        
+        [ForeignKey("ToMapPointId")]
         public virtual Place To { get; set; }
         [Required]
-        public int ToPlaceId { get; set; }
-
-        public virtual ICollection<Item> Items { get; set; }
+        public int ToMapPointId { get; set; }
 
         
 

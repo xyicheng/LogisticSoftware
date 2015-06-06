@@ -4,48 +4,98 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div id="content">
+    <h2>Details</h2>
 
-<h2>Details</h2>
+    <div class="lefted">
+        <h4>Supply</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.From.PlaceName)
+            </dt>
 
-<div>
-    <h4>Supply</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.From.PlaceName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.From.PlaceName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.From.PlaceName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.To.PlaceName)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.To.PlaceName)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.To.PlaceName)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.To.PlaceName)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Cost)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cost)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Cost)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cost)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
+        </dl>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.SupplyId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+    <script type="text/javascript">
+        var map;
+        function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(@((Model.From.Latitude + Model.To.Latitude)/2),
+                    @((Model.From.Longitude + Model.To.Longitude)/2)),
+                zoom: 12,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById("map_canvas"),
+                mapOptions);
+            var marker1 = new google.maps.Marker({
+                position: new google.maps.LatLng(@Model.From.Latitude, @Model.From.Longitude),
+                map: map,
+                title: '@Model.From.PlaceName'
+            });
+            var marker2 = new google.maps.Marker({
+                position: new google.maps.LatLng(@Model.To.Latitude, @Model.To.Longitude),
+                map: map,
+                title: '@Model.To.PlaceName'
+            });
+            displayRoute();
+        }
 
-    </dl>
+        function displayRoute() {
+
+            var start = new google.maps.LatLng(@Model.From.Latitude, @Model.From.Longitude);
+            var end = new google.maps.LatLng(@Model.To.Latitude, @Model.To.Longitude);
+
+            var directionsDisplay = new google.maps.DirectionsRenderer();// also, constructor can get "DirectionsRendererOptions" object
+            directionsDisplay.setMap(map); // map should be already initialized.
+
+            var request = {
+                origin : start,
+                destination : end,
+                travelMode : google.maps.TravelMode.DRIVING
+            };
+            var directionsService = new google.maps.DirectionsService(); 
+            directionsService.route(request, function(response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                }
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <div id="map_canvas" style="width: 800px; height: 500px; float: right;"></div>
+
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SupplyId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

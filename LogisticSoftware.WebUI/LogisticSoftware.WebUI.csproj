@@ -152,6 +152,7 @@
     <Compile Include="Models\Entities\Places\Garage.cs" />
     <Compile Include="Models\Entities\Places\Granary.cs" />
     <Compile Include="Models\Entities\Item.cs" />
+    <Compile Include="Models\Entities\Places\MapPoint.cs" />
     <Compile Include="Models\Entities\Places\Place.cs" />
     <Compile Include="Models\Entities\Places\Supplier.cs" />
     <Compile Include="Models\Entities\Supply.cs" />

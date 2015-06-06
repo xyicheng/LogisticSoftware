@@ -12,13 +12,16 @@ namespace LogisticSoftware.WebUI.Models
     public class LogisticsDbContext : DbContext
     {
 
-        public LogisticsDbContext () : base("LogisticsDb")
-        { }
+        public LogisticsDbContext() : base("LogisticsDb")
+        {
+            Database.SetInitializer(new LogisticsDbInitializer());
+        }
 
         public DbSet<FuelType> FuelTypes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Driver> Drivers { get; set; }
         
+        public DbSet<MapPoint> MapPoints { get; set; }
         public DbSet<Place> Places { get; set; }
         public DbSet<Garage> Garages { get; set; }
         public DbSet<Factory> Factories { get; set; }
@@ -39,13 +42,13 @@ namespace LogisticSoftware.WebUI.Models
         {
 
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-
+            
 
         }
 
     }
 
-    public class BookDbInitializer : DropCreateDatabaseAlways<LogisticsDbContext>
+    public class LogisticsDbInitializer : DropCreateDatabaseAlways<LogisticsDbContext>
     {
         protected override void Seed(LogisticsDbContext context)
         {
@@ -135,6 +138,14 @@ namespace LogisticSoftware.WebUI.Models
                 TrunkSize = 60000
             };
             context.Vehicles.Add(vehicle);
+            context.SaveChanges();
+            var supply = new Supply()
+            {
+                FromMapPointId = garage.MapPointId,
+                ToMapPointId = customer.MapPointId,
+                Date = DateTime.Now
+            };
+            context.Supplies.Add(supply);
 
             base.Seed(context);
         }
