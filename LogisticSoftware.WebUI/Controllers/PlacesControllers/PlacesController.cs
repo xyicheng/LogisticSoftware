@@ -11,7 +11,7 @@ using LogisticSoftware.WebUI.Models.Entities.Places;
 
 namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
 {
-    public class PlacesController : Controller
+    public abstract class PlacesController : Controller
     {
         private static LogisticsDbContext db = new LogisticsDbContext();
 

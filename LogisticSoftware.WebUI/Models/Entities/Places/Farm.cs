@@ -3,7 +3,7 @@
 namespace LogisticSoftware.WebUI.Models.Entities.Places
 {
     [Table("Farm")]
-    public class Farm
+    public class Farm: Place
     {
     }
 }

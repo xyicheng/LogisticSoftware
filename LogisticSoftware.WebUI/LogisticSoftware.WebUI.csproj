@@ -128,9 +128,12 @@
     <Compile Include="Controllers\PlacesControllers\CustomersController.cs" />
     <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\PlacesControllers\FactoriesController.cs" />
+    <Compile Include="Controllers\PlacesControllers\FarmsController.cs" />
     <Compile Include="Controllers\PlacesControllers\GaragesController.cs" />
+    <Compile Include="Controllers\PlacesControllers\GranariesController.cs" />
     <Compile Include="Controllers\PlacesControllers\PlacesController.cs" />
     <Compile Include="Controllers\PlacesControllers\SuppliersController.cs" />
+    <Compile Include="Controllers\PlacesControllers\WarehousesController.cs" />
     <Compile Include="Controllers\SuppliesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
@@ -184,7 +187,10 @@
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\" />
     <Folder Include="Views\Customers\" />
+    <Folder Include="Views\Farms\" />
+    <Folder Include="Views\Granaries\" />
     <Folder Include="Views\Suppliers\" />
+    <Folder Include="Views\Warehouses\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

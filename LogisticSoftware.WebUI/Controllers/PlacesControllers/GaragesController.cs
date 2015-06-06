@@ -19,6 +19,6 @@ namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
             CreateString = "Додати гараж";
             DatailsTitle = "Гараж";
             EditTitle = "Редагувати гараж";
-    }
+        }
     }
 }

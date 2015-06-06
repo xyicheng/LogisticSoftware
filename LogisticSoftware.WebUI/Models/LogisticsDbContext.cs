@@ -24,6 +24,9 @@ namespace LogisticSoftware.WebUI.Models
         public DbSet<Factory> Factories { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Warehouse> Warehouses { get; set; }
+        public DbSet<Farm> Farms { get; set; }
+        public DbSet<Granary> Granaries { get; set; }
 
         public DbSet<Vehicle> Vehicles { get; set; }
 

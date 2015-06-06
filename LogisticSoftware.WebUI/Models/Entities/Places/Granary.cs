@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LogisticSoftware.WebUI.Models.Entities
+namespace LogisticSoftware.WebUI.Models.Entities.Places
 {
     [Table("Granaries")]
-    public class Granary
+    public class Granary : Place
     {
     }
 }
