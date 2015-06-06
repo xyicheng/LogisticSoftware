@@ -13,13 +13,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.From.PlaceName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.To.PlaceName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cost)
+            @Html.DisplayNameFor(model => model.Target)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Date)
@@ -30,13 +24,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.From.PlaceName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.To.PlaceName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cost)
+            @Html.DisplayFor(modelItem => item.Target)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Date)

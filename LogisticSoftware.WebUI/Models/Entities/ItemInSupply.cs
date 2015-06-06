@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using LogisticSoftware.WebUI.Models.Entities.Places;
 
 namespace LogisticSoftware.WebUI.Models.Entities
 {
@@ -11,9 +12,7 @@ namespace LogisticSoftware.WebUI.Models.Entities
     public class ItemInSupply
     {
 
-        
-
-        public virtual Supply Supply { get; set; }
+        public virtual MapPointOnRoute MapPointOnRoute { get; set; }
 
         public virtual Vehicle Vehicle { get; set; }
 

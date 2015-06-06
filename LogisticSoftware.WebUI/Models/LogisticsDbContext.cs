@@ -141,11 +141,35 @@ namespace LogisticSoftware.WebUI.Models
             context.SaveChanges();
             var supply = new Supply()
             {
-                FromMapPointId = garage.MapPointId,
-                ToMapPointId = customer.MapPointId,
+                Target = "Перевезення товару з фабрики клієнту",
                 Date = DateTime.Now
             };
             context.Supplies.Add(supply);
+
+            supply.MapPointsOnRoute = new HashSet<MapPointOnRoute>
+            {
+                new MapPointOnRoute()
+                {
+                    MapPoint = garage,
+                    PointNumber = 0
+                },
+                new MapPointOnRoute()
+                {
+                    MapPoint = factory,
+                    PointNumber = 1
+                },
+                new MapPointOnRoute()
+                {
+                    MapPoint = customer,
+                    PointNumber = 2
+                },
+                new MapPointOnRoute()
+                {
+                    MapPoint = garage,
+                    PointNumber = 3
+                }
+            };
+
 
             base.Seed(context);
         }

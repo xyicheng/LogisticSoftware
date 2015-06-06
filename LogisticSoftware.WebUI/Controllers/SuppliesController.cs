@@ -18,8 +18,7 @@ namespace LogisticSoftware.WebUI.Controllers
         // GET: Supplies
         public ActionResult Index()
         {
-            var supplies = db.Supplies.Include(s => s.From).Include(s => s.To);
-            return View(supplies.ToList());
+            return View(db.Supplies.ToList());
         }
 
         // GET: Supplies/Details/5
@@ -40,8 +39,6 @@ namespace LogisticSoftware.WebUI.Controllers
         // GET: Supplies/Create
         public ActionResult Create()
         {
-            ViewBag.FromPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName");
-            ViewBag.ToPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName");
             return View();
         }
 
@@ -50,7 +47,7 @@ namespace LogisticSoftware.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SupplyId,Cost,Date,FromPlaceId,ToPlaceId")] Supply supply)
+        public ActionResult Create([Bind(Include = "SupplyId,Cost,Date")] Supply supply)
         {
             if (ModelState.IsValid)
             {
@@ -59,8 +56,6 @@ namespace LogisticSoftware.WebUI.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.FromPlaceId = new SelectList(db.Places, "MapPointId", "PlaceName", supply.FromMapPointId);
-            ViewBag.ToPlaceId = new SelectList(db.Places, "MapPointId", "PlaceName", supply.ToMapPointId);
             return View(supply);
         }
 
@@ -76,8 +71,6 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.FromPlaceId = new SelectList(db.Places, "MapPointId", "PlaceName", supply.FromMapPointId);
-            ViewBag.ToPlaceId = new SelectList(db.Places, "MapPointId", "PlaceName", supply.ToMapPointId);
             return View(supply);
         }
 
@@ -86,7 +79,7 @@ namespace LogisticSoftware.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SupplyId,Cost,Date,FromPlaceId,ToPlaceId")] Supply supply)
+        public ActionResult Edit([Bind(Include = "SupplyId,Cost,Date")] Supply supply)
         {
             if (ModelState.IsValid)
             {
@@ -94,8 +87,6 @@ namespace LogisticSoftware.WebUI.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.FromPlaceId = new SelectList(db.Places, "MapPointId", "PlaceName", supply.FromMapPointId);
-            ViewBag.ToPlaceId = new SelectList(db.Places, "MapPointId", "PlaceName", supply.ToMapPointId);
             return View(supply);
         }
 

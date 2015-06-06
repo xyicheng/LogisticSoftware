@@ -23,5 +23,7 @@ namespace LogisticSoftware.WebUI.Models.Entities.Places
         [Required(ErrorMessage = " ")]
         [DisplayName("Довгота")]
         public double Longitude { get; set; }
+
+        public virtual ICollection<MapPointOnRoute> MapPointOnRoutes { get; set; } 
     }
 }
