@@ -7,118 +7,111 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using LogisticSoftware.WebUI.Models;
-using LogisticSoftware.WebUI.Models.Entities;
 using LogisticSoftware.WebUI.Models.Entities.Places;
 
-namespace LogisticSoftware.WebUI.Controllers
+namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
 {
-    [Authorize]
-    public class CustomersController : Controller
+    public class PlacesController : Controller
     {
         private LogisticsDbContext db = new LogisticsDbContext();
 
-        // GET: Customers
+        // GET: Places
         public ActionResult Index()
         {
-            ViewBag.Title = "Клієнти";
-            ViewBag.CreateString = "Додати клієнта";
-            return View("~/Views/Shared/Places/Index.cshtml", db.Customers.ToList());
+            return View(db.Places.ToList());
         }
 
-        // GET: Customers/Details/5
+        // GET: Places/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Place place = db.Places.Find(id);
+            if (place == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Title = "Клієнт";
-            return View("~/Views/Shared/Places/Details.cshtml", customer);
+            return View(place);
         }
 
-        // GET: Customers/Create
+        // GET: Places/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Customers/Create
+        // POST: Places/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Customer customer)
+        public ActionResult Create([Bind(Include = "PlaceId,PlaceName,Address,Latitude,Longitude")] Place place)
         {
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customer);
+                db.Places.Add(place);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(customer);
+            return View(place);
         }
 
-        // GET: Customers/Edit/5
+        // GET: Places/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Place place = db.Places.Find(id);
+            if (place == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Title = "Редагувати клієнта";
-            return View("~/Views/Shared/Places/Edit.cshtml", customer);
+            return View(place);
         }
 
-        // POST: Customers/Edit/5
+        // POST: Places/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Customer customer)
+        public ActionResult Edit([Bind(Include = "PlaceId,PlaceName,Address,Latitude,Longitude")] Place place)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(customer).State = EntityState.Modified;
+                db.Entry(place).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Title = "Редагувати клієнта";
-            return View("~/Views/Shared/Places/Edit.cshtml", customer);
+            return View(place);
         }
 
-        // GET: Customers/Delete/5
+        // GET: Places/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Place place = db.Places.Find(id);
+            if (place == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(place);
         }
 
-        // POST: Customers/Delete/5
+        // POST: Places/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Customer customer = db.Customers.Find(id);
-            db.Customers.Remove(customer);
+            Place place = db.Places.Find(id);
+            db.Places.Remove(place);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,124 +1,119 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using LogisticSoftware.WebUI.Models;
-using LogisticSoftware.WebUI.Models.Entities;
 using LogisticSoftware.WebUI.Models.Entities.Places;
 
-namespace LogisticSoftware.WebUI.Controllers
+namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
 {
     [Authorize]
-    public class FactoriesController : Controller
+    public class SuppliersController : PlacesController
     {
         private LogisticsDbContext db = new LogisticsDbContext();
 
-        // GET: Factories
+        // GET: Suppliers
         public ActionResult Index()
         {
-            ViewBag.Title = "Виробничі потужності";
-            ViewBag.CreateString = "Додати виробничу потужність";
-            return View("~/Views/Shared/Places/Index.cshtml", db.Factories.ToList());
+            ViewBag.Title = "Постачальники";
+            ViewBag.CreateString = "Додати постачальника";
+            return View(IndexViewString, db.Suppliers.ToList());
         }
 
-        // GET: Factories/Details/5
+        // GET: Suppliers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Factory factory = db.Factories.Find(id);
-            if (factory == null)
+            Supplier supplier = db.Suppliers.Find(id);
+            if (supplier == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Title = "Виробнича потужність";
-            return View("~/Views/Shared/Places/Details.cshtml", factory);
+            ViewBag.Title = "Постачальник";
+            return View(DetailsViewString, supplier);
         }
 
-        // GET: Factories/Create
+        // GET: Suppliers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Factories/Create
+        // POST: Suppliers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Factory factory)
+        public ActionResult Create([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Supplier supplier)
         {
             if (ModelState.IsValid)
             {
-                db.Factories.Add(factory);
+                db.Suppliers.Add(supplier);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(factory);
+            return View(supplier);
         }
 
-        // GET: Factories/Edit/5
+        // GET: Suppliers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Factory factory = db.Factories.Find(id);
-            if (factory == null)
+            Supplier supplier = db.Suppliers.Find(id);
+            if (supplier == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Title = "Редагувати виробничу потужність";
-            return View("~/Views/Shared/Places/Edit.cshtml", factory);
+            ViewBag.Title = "Редагувати постачальника";
+            return View(EditViewString, supplier);
         }
 
-        // POST: Factories/Edit/5
+        // POST: Suppliers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Factory factory)
+        public ActionResult Edit([Bind(Include = "PlaceId,PlaceName,Address,Latitude,Longitude")] Supplier supplier)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(factory).State = EntityState.Modified;
+                db.Entry(supplier).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Title = "Редагувати виробничу потужність";
-            return View("~/Views/Shared/Places/Edit.cshtml", factory);
+            ViewBag.Title = "Редагувати постачальника";
+            return View(EditViewString, supplier);
         }
 
-        // GET: Factories/Delete/5
+        // GET: Suppliers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Factory factory = db.Factories.Find(id);
-            if (factory == null)
+            Supplier supplier = db.Suppliers.Find(id);
+            if (supplier == null)
             {
                 return HttpNotFound();
             }
-            return View(factory);
+            return View(supplier);
         }
 
-        // POST: Factories/Delete/5
+        // POST: Suppliers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Factory factory = db.Factories.Find(id);
-            db.Factories.Remove(factory);
+            Supplier supplier = db.Suppliers.Find(id);
+            db.Suppliers.Remove(supplier);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

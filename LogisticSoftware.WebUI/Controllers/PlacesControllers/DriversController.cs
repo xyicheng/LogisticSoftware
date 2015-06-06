@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using LogisticSoftware.WebUI.Models;
 using LogisticSoftware.WebUI.Models.Entities;
 
-namespace LogisticSoftware.WebUI.Controllers
+namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
 {
     [Authorize]
     public class DriversController : Controller
