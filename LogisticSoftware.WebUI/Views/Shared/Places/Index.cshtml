@@ -1,40 +1,43 @@
 ﻿@model IEnumerable<LogisticSoftware.WebUI.Models.Entities.Places.Place>
 
 @{
-    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div id="content">
+    <header>
+        <h2>@ViewBag.Title</h2>
 
-<h2>Index</h2>
+        <p>
+            @Html.ActionLink((string)ViewBag.CreateString, "Create")
+        </p>
+    </header>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PlaceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th></th>
+        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PlaceName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlaceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.ActionLink("Редагувати", "Edit", new {id = item.PlaceId}) |
+                    @Html.ActionLink("Переглянути", "Details", new {id = item.PlaceId}) |
+                    @Html.ActionLink("Видалити", "Delete", new {id = item.PlaceId})
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PlaceName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PlaceId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PlaceId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PlaceId })
-        </td>
-    </tr>
-}
-
-</table>
+    </table>
+</div>

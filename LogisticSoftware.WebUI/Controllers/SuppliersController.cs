@@ -1,119 +1,124 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using LogisticSoftware.WebUI.Models;
+using LogisticSoftware.WebUI.Models.Entities;
 using LogisticSoftware.WebUI.Models.Entities.Places;
 
-namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
+namespace LogisticSoftware.WebUI.Controllers
 {
     [Authorize]
-    public class CustomersController : Controller
+    public class SuppliersController : Controller
     {
         private LogisticsDbContext db = new LogisticsDbContext();
 
-        // GET: Customers
+        // GET: Suppliers
         public ActionResult Index()
         {
-            ViewBag.Title = "Клієнти";
-            ViewBag.CreateString = "Додати клієнта";
-            return View("~/Views/Shared/Places/Index.cshtml", db.Customers.ToList());
+            ViewBag.Title = "Постачальники";
+            ViewBag.CreateString = "Додати постачальника";
+            return View("~/Views/Shared/Places/Index.cshtml", db.Suppliers.ToList());
         }
 
-        // GET: Customers/Details/5
+        // GET: Suppliers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Supplier supplier = db.Suppliers.Find(id);
+            if (supplier == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Title = "Клієнт";
-            return View("~/Views/Shared/Places/Details.cshtml", customer);
+            ViewBag.Title = "Постачальник";
+            return View("~/Views/Shared/Places/Details.cshtml", supplier);
         }
 
-        // GET: Customers/Create
+        // GET: Suppliers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Customers/Create
+        // POST: Suppliers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Customer customer)
+        public ActionResult Create([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Supplier supplier)
         {
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customer);
+                db.Suppliers.Add(supplier);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(customer);
+            return View(supplier);
         }
 
-        // GET: Customers/Edit/5
+        // GET: Suppliers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Supplier supplier = db.Suppliers.Find(id);
+            if (supplier == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Title = "Редагувати клієнта";
-            return View("~/Views/Shared/Places/Edit.cshtml", customer);
+            ViewBag.Title = "Редагувати постачальника";
+            return View("~/Views/Shared/Places/Edit.cshtml", supplier);
         }
 
-        // POST: Customers/Edit/5
+        // POST: Suppliers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Customer customer)
+        public ActionResult Edit([Bind(Include = "PlaceId,PlaceName,Region,District,City,Street,NumberOfBuilding,Latitude,Longitude")] Supplier supplier)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(customer).State = EntityState.Modified;
+                db.Entry(supplier).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Title = "Редагувати клієнта";
-            return View("~/Views/Shared/Places/Edit.cshtml", customer);
+            ViewBag.Title = "Редагувати постачальника";
+            return View("~/Views/Shared/Places/Edit.cshtml", supplier);
         }
 
-        // GET: Customers/Delete/5
+        // GET: Suppliers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Supplier supplier = db.Suppliers.Find(id);
+            if (supplier == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(supplier);
         }
 
-        // POST: Customers/Delete/5
+        // POST: Suppliers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Customer customer = db.Customers.Find(id);
-            db.Customers.Remove(customer);
+            Supplier supplier = db.Suppliers.Find(id);
+            db.Suppliers.Remove(supplier);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

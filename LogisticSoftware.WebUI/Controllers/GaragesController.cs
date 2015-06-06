@@ -3,9 +3,10 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using LogisticSoftware.WebUI.Models;
+using LogisticSoftware.WebUI.Models.Entities;
 using LogisticSoftware.WebUI.Models.Entities.Places;
 
-namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
+namespace LogisticSoftware.WebUI.Controllers
 {
     [Authorize]
     public class GaragesController : Controller

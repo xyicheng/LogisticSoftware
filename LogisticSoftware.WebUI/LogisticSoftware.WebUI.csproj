@@ -125,12 +125,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\PlacesControllers\CustomersController.cs" />
-    <Compile Include="Controllers\PlacesControllers\DriversController.cs" />
-    <Compile Include="Controllers\PlacesControllers\FactoriesController.cs" />
-    <Compile Include="Controllers\PlacesControllers\GaragesController.cs" />
-    <Compile Include="Controllers\PlacesControllers\PlacesController.cs" />
-    <Compile Include="Controllers\PlacesControllers\SuppliersController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\DriversController.cs" />
+    <Compile Include="Controllers\FactoriesController.cs" />
+    <Compile Include="Controllers\GaragesController.cs" />
+    <Compile Include="Controllers\SuppliersController.cs" />
     <Compile Include="Controllers\SuppliesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
@@ -145,7 +144,6 @@
     <Compile Include="Models\Entities\Places\Factory.cs" />
     <Compile Include="Models\Entities\Places\Farm.cs" />
     <Compile Include="Models\Entities\FuelType.cs" />
-    <Compile Include="Models\Entities\Places\Field.cs" />
     <Compile Include="Models\Entities\Places\Garage.cs" />
     <Compile Include="Models\Entities\Places\Granary.cs" />
     <Compile Include="Models\Entities\Item.cs" />
@@ -163,6 +161,7 @@
     <Content Include="Content\Reset.css" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -188,6 +187,9 @@
     <Folder Include="Views\Suppliers\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
