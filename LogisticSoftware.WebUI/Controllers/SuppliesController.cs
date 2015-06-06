@@ -18,7 +18,7 @@ namespace LogisticSoftware.WebUI.Controllers
         // GET: Supplies
         public ActionResult Index()
         {
-            var supplies = db.Supplies;
+            var supplies = db.Supplies.Include(s => s.From).Include(s => s.To);
             return View(supplies.ToList());
         }
 
@@ -42,7 +42,6 @@ namespace LogisticSoftware.WebUI.Controllers
         {
             ViewBag.FromPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName");
             ViewBag.ToPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName");
-            ViewBag.VehicleId = new SelectList(db.Vehicles, "VehicleId", "RegistrationNumber");
             return View();
         }
 
@@ -51,7 +50,7 @@ namespace LogisticSoftware.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SupplyId,Cost,Date,VehicleId,FromPlaceId,ToPlaceId")] Supply supply)
+        public ActionResult Create([Bind(Include = "SupplyId,Cost,Date,FromPlaceId,ToPlaceId")] Supply supply)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +61,6 @@ namespace LogisticSoftware.WebUI.Controllers
 
             ViewBag.FromPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", supply.FromPlaceId);
             ViewBag.ToPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", supply.ToPlaceId);
-            ViewBag.VehicleId = new SelectList(db.Vehicles, "VehicleId", "RegistrationNumber", supply.VehicleId);
             return View(supply);
         }
 
@@ -80,7 +78,6 @@ namespace LogisticSoftware.WebUI.Controllers
             }
             ViewBag.FromPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", supply.FromPlaceId);
             ViewBag.ToPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", supply.ToPlaceId);
-            ViewBag.VehicleId = new SelectList(db.Vehicles, "VehicleId", "RegistrationNumber", supply.VehicleId);
             return View(supply);
         }
 
@@ -89,7 +86,7 @@ namespace LogisticSoftware.WebUI.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SupplyId,Cost,Date,VehicleId,FromPlaceId,ToPlaceId")] Supply supply)
+        public ActionResult Edit([Bind(Include = "SupplyId,Cost,Date,FromPlaceId,ToPlaceId")] Supply supply)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +96,6 @@ namespace LogisticSoftware.WebUI.Controllers
             }
             ViewBag.FromPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", supply.FromPlaceId);
             ViewBag.ToPlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", supply.ToPlaceId);
-            ViewBag.VehicleId = new SelectList(db.Vehicles, "VehicleId", "RegistrationNumber", supply.VehicleId);
             return View(supply);
         }
 

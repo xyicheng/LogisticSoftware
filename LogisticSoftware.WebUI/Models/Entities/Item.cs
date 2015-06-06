@@ -21,7 +21,7 @@ namespace LogisticSoftware.WebUI.Models.Entities
         public int ItemsQuantityInPack { get; set; }
 
 
-        public virtual Supply Supply { get; set; }
+        public virtual ItemInSupply ItemInSupply { get; set; }
 
 
     }

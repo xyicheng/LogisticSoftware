@@ -17,8 +17,7 @@ namespace LogisticSoftware.WebUI.Models.Entities
         public decimal Cost { get; set; }
         public DateTime Date { get; set; }
         
-        public virtual Vehicle Vehicle { get; set; }
-        public int VehicleId { get; set; }
+        public virtual ICollection<ItemInSupply> ItemsInSupply { get; set; }
 
         [ForeignKey("FromPlaceId")]
         
