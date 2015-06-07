@@ -1,0 +1,75 @@
+﻿@model LogisticSoftware.WebUI.Models.Entities.ItemInSupply
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ItemInSupply</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.From.PlaceOnTheRouteId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.From.PlaceOnTheRouteId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.To.PlaceOnTheRouteId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.To.PlaceOnTheRouteId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.RegistrationNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.RegistrationNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemsQuantityInPack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemsQuantityInPack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SingleItemWeight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SingleItemWeight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfPackages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfPackages)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ItemInSupplyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

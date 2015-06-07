@@ -11,6 +11,9 @@ namespace LogisticSoftware.WebUI.Models.Entities.Places
 
         public int NumberOnTheRoute { get; set; }
 
+        [NotMapped]
+        public string PlaceName => Place.PlaceName;
+
         [ForeignKey("PlaceId")]
         public virtual Place Place { get; set; }
         public int PlaceId { get; set; }

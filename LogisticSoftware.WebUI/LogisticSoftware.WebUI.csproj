@@ -125,6 +125,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ItemInSuppliesController.cs" />
     <Compile Include="Controllers\PlaceOnTheRoutesController.cs" />
     <Compile Include="Controllers\PlacesControllers\CustomersController.cs" />
     <Compile Include="Controllers\DriversController.cs" />
@@ -153,7 +154,6 @@
     <Compile Include="Models\Entities\FuelType.cs" />
     <Compile Include="Models\Entities\Places\Garage.cs" />
     <Compile Include="Models\Entities\Places\Granary.cs" />
-    <Compile Include="Models\Entities\Item.cs" />
     <Compile Include="Models\Entities\Places\Place.cs" />
     <Compile Include="Models\Entities\Places\Supplier.cs" />
     <Compile Include="Models\Entities\Supply.cs" />
@@ -264,6 +264,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Places\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ItemInSupplies\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ItemInSupplies\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ItemInSupplies\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ItemInSupplies\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ItemInSupplies\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

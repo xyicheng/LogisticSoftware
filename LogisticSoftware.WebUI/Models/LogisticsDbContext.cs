@@ -29,22 +29,17 @@ namespace LogisticSoftware.WebUI.Models
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<Farm> Farms { get; set; }
         public DbSet<Granary> Granaries { get; set; }
-        public DbSet<PlaceOnTheRoute> PlacesOnTheRoutes { get; set; }
-
+       
         public DbSet<Vehicle> Vehicles { get; set; }
 
         public DbSet<Supply> Supplies { get; set; }
-
-        public DbSet<Item> Items { get; set; }
+        public DbSet<PlaceOnTheRoute> PlacesOnTheRoutes { get; set; }
         public DbSet<ItemInSupply> ItemsInSupplies { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-
-
         }
 
     }
@@ -182,6 +177,16 @@ namespace LogisticSoftware.WebUI.Models
             context.Supplies.Add(supply);
             context.SaveChanges();
 
+            var item = new ItemInSupply()
+            {
+                ItemName = "Хліб",
+                SingleItemWeight = 1.0,
+                NumberOfPackages = 20,
+                ItemsQuantityInPack = 50,
+                Vehicle = vehicle
+
+            };
+
             supply.PlacesOnTheRoute = new HashSet<PlaceOnTheRoute>
             {
                 new PlaceOnTheRoute()
@@ -192,12 +197,20 @@ namespace LogisticSoftware.WebUI.Models
                 new PlaceOnTheRoute()
                 {
                     Place = factory,
-                    NumberOnTheRoute = 1
+                    NumberOnTheRoute = 1,
+                    ToLoad = new HashSet<ItemInSupply>()
+                    {
+                        item
+                    }
                 },
                 new PlaceOnTheRoute()
                 {
                     Place = customer,
-                    NumberOnTheRoute = 2
+                    NumberOnTheRoute = 2,
+                    ToUnLoad = new HashSet<ItemInSupply>()
+                    {
+                        item
+                    }
                 },
                 new PlaceOnTheRoute()
                 {

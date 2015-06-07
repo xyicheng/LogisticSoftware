@@ -1,0 +1,77 @@
+﻿@model IEnumerable<LogisticSoftware.WebUI.Models.Entities.ItemInSupply>
+
+@{
+    ViewBag.Title = "Об'єкти в поставці";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="content">
+    <header>
+        <h2>Об'єкти в поставці</h2>
+
+        <p>
+            @Html.ActionLink("Додати об'єкт в поставку", "Create")
+        </p>
+    </header>
+    <table class="table">
+        <tr>
+            <th>
+               Місце завантаження
+            </th>
+            <th>
+               Місце виванатження
+            </th>
+            <th>
+                Автомобіль
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemsQuantityInPack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SingleItemWeight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfPackages)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.From.PlaceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.To.PlaceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vehicle.RegistrationNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemsQuantityInPack)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SingleItemWeight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfPackages)
+                </td>
+                <td>
+                    @Html.ActionLink("Редагувати", "Edit", new {id = item.ItemInSupplyId}) |
+                    @Html.ActionLink("Видалити", "Delete", new {id = item.ItemInSupplyId})
+                </td>
+            </tr>
+        }
+
+    </table>
+    <br/>
+    <div>
+        @Html.ActionLink("Повернутись до списку", "Index", "Supplies")
+    </div>
+</div>

@@ -24,6 +24,10 @@
             <th>
                 Маршрут
             </th>
+            <th>
+                Об'єкти поставки
+            </th>
+            <th></th>
             <th></th>
         </tr>
 
@@ -41,8 +45,15 @@
                     @Html.ActionLink("Переглянути маршрут", "Route", new { id = item.SupplyId }) |
                 </td>
                 <td>
-                    @Html.ActionLink("Редагувати", "Edit", new {id = item.SupplyId}) |
+                    @Html.ActionLink("Редагувати об'єкти поставки", "Index", "ItemInSupplies", new {id = item.SupplyId}, null)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Редагувати", "Edit", new {id = item.SupplyId})
                     @Html.ActionLink("Видалити", "Delete", new {id = item.SupplyId})
+                </td>
+                <td>
+                    @Html.ActionLink("Звіт", "Report", new { id = item.SupplyId })
                 </td>
             </tr>
         }
