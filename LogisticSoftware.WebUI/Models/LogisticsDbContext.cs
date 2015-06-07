@@ -46,6 +46,7 @@ namespace LogisticSoftware.WebUI.Models
 
         }
 
+        public System.Data.Entity.DbSet<LogisticSoftware.WebUI.Models.Entities.Places.MapPointOnRoute> MapPointOnRoutes { get; set; }
     }
 
     public class LogisticsDbInitializer : DropCreateDatabaseAlways<LogisticsDbContext>

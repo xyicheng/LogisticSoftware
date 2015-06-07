@@ -1,0 +1,34 @@
+﻿@model IEnumerable<LogisticSoftware.WebUI.Models.Entities.Places.MapPointOnRoute>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { id = ViewBag.SupplyId })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PointNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PointNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MapPointOnRouteId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MapPointOnRouteId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MapPointOnRouteId })
+        </td>
+    </tr>
+}
+
+</table>

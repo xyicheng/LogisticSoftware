@@ -20,6 +20,8 @@ namespace LogisticSoftware.WebUI.Models.Entities.Places
 
         public virtual ICollection<ItemInSupply> ItemsInSupply { get; set; }
 
+        [ForeignKey("SupplyId")]
         public virtual Supply Supply { get; set; }
+        public int SupplyId { get; set; }
     }
 }

@@ -1,0 +1,27 @@
+﻿@model LogisticSoftware.WebUI.Models.Entities.Places.MapPointOnRoute
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MapPointOnRoute</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PointNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PointNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MapPointOnRouteId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -125,6 +125,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\MapPointOnRoutesController.cs" />
     <Compile Include="Controllers\PlacesControllers\CustomersController.cs" />
     <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\PlacesControllers\FactoriesController.cs" />
@@ -255,6 +256,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Supplies\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MapPointOnRoutes\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MapPointOnRoutes\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MapPointOnRoutes\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MapPointOnRoutes\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MapPointOnRoutes\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

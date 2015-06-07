@@ -20,6 +20,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Date)
             </th>
+            <th>
+                Маршрут
+            </th>
             <th></th>
         </tr>
 
@@ -33,6 +36,10 @@
                     @Html.DisplayFor(modelItem => item.Date)
                 </td>
                 <td>
+                    @Html.ActionLink("Маршрут", "Index", "MapPointOnRoutes", new { id = item.SupplyId }, null)
+                </td>
+                <td>
+                    
                     @Html.ActionLink("Редагувати", "Edit", new {id = item.SupplyId}) |
                     @Html.ActionLink("Переглянути", "Details", new {id = item.SupplyId}) |
                     @Html.ActionLink("Видалити", "Delete", new {id = item.SupplyId})

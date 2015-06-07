@@ -1,4 +1,4 @@
-﻿@model LogisticSoftware.WebUI.Models.Entities.Supply
+﻿@model LogisticSoftware.WebUI.Models.Entities.Places.MapPointOnRoute
 
 @{
     ViewBag.Title = "Delete";
@@ -9,23 +9,15 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Supply</h4>
+    <h4>MapPointOnRoute</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Target)
+            @Html.DisplayNameFor(model => model.PointNumber)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Target)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Date)
+            @Html.DisplayFor(model => model.PointNumber)
         </dd>
 
     </dl>

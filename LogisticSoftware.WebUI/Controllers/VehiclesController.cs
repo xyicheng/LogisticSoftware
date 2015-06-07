@@ -43,7 +43,7 @@ namespace LogisticSoftware.WebUI.Controllers
         {
             ViewBag.DriverId = new SelectList(db.Drivers, "DriverId", "Name");
             ViewBag.FuelTypeId = new SelectList(db.FuelTypes, "FuelTypeId", "FuelName");
-            ViewBag.PlaceId = new SelectList(db.Garages, "PlaceId", "PlaceName");
+            ViewBag.MapPointId = new SelectList(db.Garages, "MapPointId", "PlaceName");
             return View();
         }
 
@@ -63,7 +63,7 @@ namespace LogisticSoftware.WebUI.Controllers
 
             ViewBag.DriverId = new SelectList(db.Drivers, "DriverId", "Name", vehicle.DriverId);
             ViewBag.FuelTypeId = new SelectList(db.FuelTypes, "FuelTypeId", "FuelName", vehicle.FuelTypeId);
-            ViewBag.PlaceId = new SelectList(db.Garages, "PlaceId", "PlaceName", vehicle.MapPointId);
+            ViewBag.MapPointId = new SelectList(db.Garages, "MapPointId", "PlaceName", vehicle.MapPointId);
             return View(vehicle);
         }
 
@@ -81,7 +81,7 @@ namespace LogisticSoftware.WebUI.Controllers
             }
             ViewBag.DriverId = new SelectList(db.Drivers, "DriverId", "Name", vehicle.DriverId);
             ViewBag.FuelTypeId = new SelectList(db.FuelTypes, "FuelTypeId", "FuelName", vehicle.FuelTypeId);
-            ViewBag.PlaceId = new SelectList(db.Garages, "PlaceId", "PlaceName", vehicle.MapPointId);
+            ViewBag.MapPointId = new SelectList(db.Garages, "MapPointId", "PlaceName", vehicle.MapPointId);
             return View(vehicle);
         }
 
@@ -100,7 +100,7 @@ namespace LogisticSoftware.WebUI.Controllers
             }
             ViewBag.DriverId = new SelectList(db.Drivers, "DriverId", "Name", vehicle.DriverId);
             ViewBag.FuelTypeId = new SelectList(db.FuelTypes, "FuelTypeId", "FuelName", vehicle.FuelTypeId);
-            ViewBag.PlaceId = new SelectList(db.Garages, "PlaceId", "PlaceName", vehicle.MapPointId);
+            ViewBag.MapPointId = new SelectList(db.Garages, "MapPointId", "PlaceName", vehicle.MapPointId);
             return View(vehicle);
         }
 

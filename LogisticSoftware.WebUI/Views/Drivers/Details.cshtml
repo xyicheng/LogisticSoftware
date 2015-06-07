@@ -21,7 +21,7 @@
                 foreach (var vehicle in Model.Vehicles)
                 {
                     <dd>
-                        @vehicle.ModelName + " " + Model.Vehicle.RegistrationNumber
+                        @(vehicle.ModelName + " " + vehicle.RegistrationNumber)
                     </dd>
 
                 }
