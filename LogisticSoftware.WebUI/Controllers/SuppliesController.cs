@@ -17,8 +17,8 @@ namespace LogisticSoftware.WebUI.Controllers
             return View(db.Supplies.ToList());
         }
 
-        // GET: Supplies/Details/5
-        public ActionResult Details(int? id)
+        // GET: Supplies/Route/5
+        public ActionResult Route(int? id)
         {
             if (id == null)
             {
@@ -49,7 +49,7 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 db.Supplies.Add(supply);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "PlaceOnTheRoutes", new { id = supply.SupplyId });
             }
 
             return View(supply);

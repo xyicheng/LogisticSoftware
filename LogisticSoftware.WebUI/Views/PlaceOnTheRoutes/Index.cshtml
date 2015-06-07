@@ -10,7 +10,7 @@
         <h2>@ViewBag.Supply.Target</h2>
 
         <p>
-            @Html.ActionLink("Додати точку на маршрут", "Create")
+            @Html.ActionLink("Додати точку на маршрут", "Create", new { id = ViewBag.Supply.SupplyId })
         </p>
     </header>
     <table class="table">
@@ -28,9 +28,7 @@
                     @Html.DisplayFor(modelItem => item.Place.PlaceName)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new {id = item.PlaceOnTheRouteId}) |
-                    @Html.ActionLink("Details", "Details", new {id = item.PlaceOnTheRouteId}) |
-                    @Html.ActionLink("Delete", "Delete", new {id = item.PlaceOnTheRouteId})
+                    @Html.ActionLink("Видалити", "Delete", new {id = item.PlaceOnTheRouteId})
                 </td>
             </tr>
         }

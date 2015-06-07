@@ -215,12 +215,6 @@
     <Content Include="Views\Shared\Places\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Places\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\Places\Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\Places\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -248,7 +242,7 @@
     <Content Include="Views\Supplies\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Supplies\Details.cshtml" />
+    <Content Include="Views\Supplies\Route.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Supplies\Edit.cshtml" />
@@ -263,13 +257,13 @@
     <Content Include="Views\PlaceOnTheRoutes\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\PlaceOnTheRoutes\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\PlaceOnTheRoutes\Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\PlaceOnTheRoutes\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Places\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Places\Details.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

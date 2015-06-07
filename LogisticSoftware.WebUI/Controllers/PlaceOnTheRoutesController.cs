@@ -24,26 +24,11 @@ namespace LogisticSoftware.WebUI.Controllers
             return View(placesOnTheRoutes.ToList());
         }
 
-        // GET: PlaceOnTheRoutes/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PlaceOnTheRoute placeOnTheRoute = db.PlacesOnTheRoutes.Find(id);
-            if (placeOnTheRoute == null)
-            {
-                return HttpNotFound();
-            }
-            return View(placeOnTheRoute);
-        }
-
         // GET: PlaceOnTheRoutes/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
             ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "PlaceName");
-            ViewBag.SupplyId = new SelectList(db.Supplies, "SupplyId", "Target");
+            ViewBag.Supply = db.Supplies.Find(id);
             return View();
         }
 
@@ -58,46 +43,11 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 db.PlacesOnTheRoutes.Add(placeOnTheRoute);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "PlaceOnTheRoutes", new { id = placeOnTheRoute.SupplyId });
             }
 
             ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", placeOnTheRoute.PlaceId);
-            ViewBag.SupplyId = new SelectList(db.Supplies, "SupplyId", "Target", placeOnTheRoute.SupplyId);
-            return View(placeOnTheRoute);
-        }
-
-        // GET: PlaceOnTheRoutes/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PlaceOnTheRoute placeOnTheRoute = db.PlacesOnTheRoutes.Find(id);
-            if (placeOnTheRoute == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", placeOnTheRoute.PlaceId);
-            ViewBag.SupplyId = new SelectList(db.Supplies, "SupplyId", "Target", placeOnTheRoute.SupplyId);
-            return View(placeOnTheRoute);
-        }
-
-        // POST: PlaceOnTheRoutes/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PlaceOnTheRouteId,NumberOnTheRoute,PlaceId,SupplyId")] PlaceOnTheRoute placeOnTheRoute)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(placeOnTheRoute).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", placeOnTheRoute.PlaceId);
-            ViewBag.SupplyId = new SelectList(db.Supplies, "SupplyId", "Target", placeOnTheRoute.SupplyId);
+            ViewBag.Supply = db.Supplies.Find(placeOnTheRoute.SupplyId);
             return View(placeOnTheRoute);
         }
 
@@ -113,6 +63,7 @@ namespace LogisticSoftware.WebUI.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Supply = db.Supplies.Find(id);
             return View(placeOnTheRoute);
         }
 
@@ -124,7 +75,7 @@ namespace LogisticSoftware.WebUI.Controllers
             PlaceOnTheRoute placeOnTheRoute = db.PlacesOnTheRoutes.Find(id);
             db.PlacesOnTheRoutes.Remove(placeOnTheRoute);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "PlaceOnTheRoutes", new { id = placeOnTheRoute.SupplyId }); ;
         }
 
         protected override void Dispose(bool disposing)
