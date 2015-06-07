@@ -125,7 +125,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\MapPointOnRoutesController.cs" />
     <Compile Include="Controllers\PlacesControllers\CustomersController.cs" />
     <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Controllers\PlacesControllers\FactoriesController.cs" />
@@ -135,7 +134,6 @@
     <Compile Include="Controllers\PlacesControllers\PlacesController.cs" />
     <Compile Include="Controllers\PlacesControllers\SuppliersController.cs" />
     <Compile Include="Controllers\PlacesControllers\WarehousesController.cs" />
-    <Compile Include="Controllers\SuppliesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -145,6 +143,7 @@
     <Compile Include="Infrastructure\Concrete\FormsAuthProvider.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Models\Entities\ItemInSupply.cs" />
+    <Compile Include="Models\Entities\Places\PlaceOnTheRoute.cs" />
     <Compile Include="Models\Entities\Places\Customer.cs" />
     <Compile Include="Models\Entities\Driver.cs" />
     <Compile Include="Models\Entities\Places\Factory.cs" />
@@ -153,8 +152,6 @@
     <Compile Include="Models\Entities\Places\Garage.cs" />
     <Compile Include="Models\Entities\Places\Granary.cs" />
     <Compile Include="Models\Entities\Item.cs" />
-    <Compile Include="Models\Entities\Places\MapPoint.cs" />
-    <Compile Include="Models\Entities\Places\MapPointOnRoute.cs" />
     <Compile Include="Models\Entities\Places\Place.cs" />
     <Compile Include="Models\Entities\Places\Supplier.cs" />
     <Compile Include="Models\Entities\Supply.cs" />
@@ -190,6 +187,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\Customers\" />
+    <Folder Include="Views\Farms\" />
+    <Folder Include="Views\Granaries\" />
+    <Folder Include="Views\Suppliers\" />
+    <Folder Include="Views\Warehouses\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -241,36 +243,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClassDiagram1.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Supplies\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Supplies\Delete.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Supplies\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Supplies\Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Supplies\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\MapPointOnRoutes\Create.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\MapPointOnRoutes\Delete.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\MapPointOnRoutes\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\MapPointOnRoutes\Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\MapPointOnRoutes\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

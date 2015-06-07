@@ -21,7 +21,6 @@ namespace LogisticSoftware.WebUI.Models
         public DbSet<User> Users { get; set; }
         public DbSet<Driver> Drivers { get; set; }
         
-        public DbSet<MapPoint> MapPoints { get; set; }
         public DbSet<Place> Places { get; set; }
         public DbSet<Garage> Garages { get; set; }
         public DbSet<Factory> Factories { get; set; }
@@ -36,17 +35,17 @@ namespace LogisticSoftware.WebUI.Models
         public DbSet<Supply> Supplies { get; set; }
 
         public DbSet<Item> Items { get; set; }
+        public DbSet<ItemInSupply> ItemsInSupplies { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-            
+
 
         }
 
-        public System.Data.Entity.DbSet<LogisticSoftware.WebUI.Models.Entities.Places.MapPointOnRoute> MapPointOnRoutes { get; set; }
     }
 
     public class LogisticsDbInitializer : DropCreateDatabaseAlways<LogisticsDbContext>
@@ -139,38 +138,6 @@ namespace LogisticSoftware.WebUI.Models
                 TrunkSize = 60000
             };
             context.Vehicles.Add(vehicle);
-            context.SaveChanges();
-            var supply = new Supply()
-            {
-                Target = "Перевезення товару з фабрики клієнту",
-                Date = DateTime.Now
-            };
-            context.Supplies.Add(supply);
-
-            supply.MapPointsOnRoute = new HashSet<MapPointOnRoute>
-            {
-                new MapPointOnRoute()
-                {
-                    MapPoint = garage,
-                    PointNumber = 0
-                },
-                new MapPointOnRoute()
-                {
-                    MapPoint = factory,
-                    PointNumber = 1
-                },
-                new MapPointOnRoute()
-                {
-                    MapPoint = customer,
-                    PointNumber = 2
-                },
-                new MapPointOnRoute()
-                {
-                    MapPoint = garage,
-                    PointNumber = 3
-                }
-            };
-
 
             base.Seed(context);
         }

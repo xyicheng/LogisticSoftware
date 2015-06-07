@@ -12,12 +12,22 @@ namespace LogisticSoftware.WebUI.Models.Entities
     public class ItemInSupply
     {
 
-        public virtual MapPointOnRoute MapPointOnRoute { get; set; }
+        [ForeignKey("FromPlaceId")]
+        public virtual PlaceOnTheRoute From { get; set; }
+        [Required]
+        public int FromPlaceId { get; set; }
 
+        [ForeignKey("ToPlaceId")]
+        public virtual PlaceOnTheRoute To { get; set; }
+        [Required]
+        public int ToPlaceId { get; set; }
+
+        [ForeignKey("VehicleId")]
         public virtual Vehicle Vehicle { get; set; }
+        public int VehicleId { get; set; }
 
+        
         public virtual Item Item { get; set; }
-
         [Key, ForeignKey("Item")]
         public int ItemId { get; set; }
     }

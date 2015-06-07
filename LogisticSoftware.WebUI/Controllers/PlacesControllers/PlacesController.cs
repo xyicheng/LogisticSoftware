@@ -73,7 +73,7 @@ namespace LogisticSoftware.WebUI.Controllers.PlacesControllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MapPointId,PlaceName,Address,Latitude,Longitude")] Place place)
+        public ActionResult Create([Bind(Include = "PlaceId,PlaceName,Address,Latitude,Longitude")] Place place)
         {
             if (ModelState.IsValid)
             {
