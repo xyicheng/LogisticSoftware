@@ -1,0 +1,43 @@
+﻿@model IEnumerable<LogisticSoftware.WebUI.Models.Entities.Places.PlaceOnTheRoute>
+
+@{
+    ViewBag.Title = ViewBag.Supply.Target;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+    <header>
+        <h2>@ViewBag.Supply.Target</h2>
+
+        <p>
+            @Html.ActionLink("Додати точку на маршрут", "Create")
+        </p>
+    </header>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Place.PlaceName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Place.PlaceName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {id = item.PlaceOnTheRouteId}) |
+                    @Html.ActionLink("Details", "Details", new {id = item.PlaceOnTheRouteId}) |
+                    @Html.ActionLink("Delete", "Delete", new {id = item.PlaceOnTheRouteId})
+                </td>
+            </tr>
+        }
+
+    </table>
+    <br/>
+    <div>
+        @Html.ActionLink("Повернутись до списку", "Index", "Supplies")
+    </div>
+</div>

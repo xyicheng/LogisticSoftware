@@ -29,6 +29,7 @@ namespace LogisticSoftware.WebUI.Models
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<Farm> Farms { get; set; }
         public DbSet<Granary> Granaries { get; set; }
+        public DbSet<PlaceOnTheRoute> PlacesOnTheRoutes { get; set; }
 
         public DbSet<Vehicle> Vehicles { get; set; }
 
@@ -138,6 +139,76 @@ namespace LogisticSoftware.WebUI.Models
                 TrunkSize = 60000
             };
             context.Vehicles.Add(vehicle);
+
+            var supply = new Supply
+            {
+                Date = DateTime.Now,
+                Target = "Доставка сировини на фабрику",
+            };
+
+            context.Supplies.Add(supply);
+            context.SaveChanges();
+
+            supply.PlacesOnTheRoute = new HashSet<PlaceOnTheRoute>
+            {
+                new PlaceOnTheRoute()
+                {
+                    Place = garage,
+                    NumberOnTheRoute = 0
+                },
+                new PlaceOnTheRoute()
+                {
+                    Place = supplier,
+                    NumberOnTheRoute = 1
+                },
+                new PlaceOnTheRoute()
+                {
+                    Place = factory,
+                    NumberOnTheRoute = 2
+                },
+                new PlaceOnTheRoute()
+                {
+                    Place = garage,
+                    NumberOnTheRoute = 3
+                }
+            };
+
+            supply = new Supply
+            {
+                Date = DateTime.Now,
+                Target = "Доставка хлібу в фірмовий магазин",
+            };
+
+            context.Supplies.Add(supply);
+            context.SaveChanges();
+
+            supply.PlacesOnTheRoute = new HashSet<PlaceOnTheRoute>
+            {
+                new PlaceOnTheRoute()
+                {
+                    Place = garage,
+                    NumberOnTheRoute = 0
+                },
+                new PlaceOnTheRoute()
+                {
+                    Place = factory,
+                    NumberOnTheRoute = 1
+                },
+                new PlaceOnTheRoute()
+                {
+                    Place = customer,
+                    NumberOnTheRoute = 2
+                },
+                new PlaceOnTheRoute()
+                {
+                    Place = garage,
+                    NumberOnTheRoute = 3
+                }
+            };
+
+            context.SaveChanges();
+
+
 
             base.Seed(context);
         }

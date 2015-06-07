@@ -1,0 +1,43 @@
+﻿@model LogisticSoftware.WebUI.Models.Entities.Places.PlaceOnTheRoute
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PlaceOnTheRoute</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Place.PlaceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Place.PlaceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supply.Target)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supply.Target)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOnTheRoute)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOnTheRoute)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PlaceOnTheRouteId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
