@@ -98,9 +98,9 @@ namespace LogisticSoftware.WebUI.Models
             var factory = new Factory()
             {
                 PlaceName = "Фабрика №1",
-                Address = "м. Черкаси, пр. Хіміків 32",
-                Latitude = 49.401511,
-                Longitude = 32.053967,
+                Address = "м. Черкаси, вул. Хоменка",
+                Latitude = 49.4258157321897,
+                Longitude = 32.0346121797486,
             };
             context.Factories.Add(factory);
 
@@ -172,6 +172,7 @@ namespace LogisticSoftware.WebUI.Models
             {
                 Date = DateTime.Now,
                 Target = "Доставка хлібу в фірмовий магазин",
+                IsGenerated = true,
             };
 
             context.Supplies.Add(supply);
@@ -183,7 +184,8 @@ namespace LogisticSoftware.WebUI.Models
                 SingleItemWeight = 1.0,
                 NumberOfPackages = 20,
                 ItemsQuantityInPack = 50,
-                Vehicle = vehicle
+                Vehicle = vehicle,
+                
 
             };
 

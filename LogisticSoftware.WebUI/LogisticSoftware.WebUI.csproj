@@ -233,9 +233,6 @@
     <Content Include="Views\Vehicles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ClassDiagram1.cd" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Supplies\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +276,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\ItemInSupplies\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogisticsSolver\LogisticsSolver.csproj">
+      <Project>{318c4bc5-2633-49fe-af09-d0312d3576c4}</Project>
+      <Name>LogisticsSolver</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

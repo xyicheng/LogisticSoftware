@@ -1,12 +1,18 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
+using LogisticsSolver.Distance;
 using LogisticSoftware.WebUI.Models;
 using LogisticSoftware.WebUI.Models.Entities;
+using Ninject.Infrastructure.Language;
 
 namespace LogisticSoftware.WebUI.Controllers
 {
+    [Authorize]
     public class SuppliesController : Controller
     {
         private LogisticsDbContext db = new LogisticsDbContext();
@@ -30,6 +36,25 @@ namespace LogisticSoftware.WebUI.Controllers
                 return HttpNotFound();
             }
             return View(supply);
+        }
+
+        public ActionResult Generate(int? id)
+        {
+            
+
+            Supply supply = db.Supplies.Find(id);
+            var response = GoogleDistanseMatrixFinder
+                .GetDistanseMatrix(supply
+                .PlacesOnTheRoute
+                .Select(p => new Tuple<double,double,int> ( p.Place.Latitude, p.Place.Longitude,p.PlaceId))
+                .ToArray());
+
+
+
+            supply.IsGenerated = true;
+            db.Entry(supply).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Route", "Supplies", new { id = supply.SupplyId });
         }
 
         // GET: Supplies/Create

@@ -41,20 +41,26 @@
                     @Html.DisplayFor(modelItem => item.Date)
                 </td>
                 <td>
-                    @Html.ActionLink("Редагувати маршрут", "Index", "PlaceOnTheRoutes", new { id = item.SupplyId }, null) |
-                    @Html.ActionLink("Переглянути маршрут", "Route", new { id = item.SupplyId }) |
+                    @(!item.IsGenerated ? Html.ActionLink("Редагувати маршрут", "Index", "PlaceOnTheRoutes", new {id = item.SupplyId}, null) : 
+                Html.ActionLink("Переглянути маршрут", "Route", new {id = item.SupplyId}))
                 </td>
                 <td>
-                    @Html.ActionLink("Редагувати об'єкти поставки", "Index", "ItemInSupplies", new {id = item.SupplyId}, null)
-                </td>
+                    @if (!@item.IsGenerated)
+                    {
+                        @Html.ActionLink("Редагувати об'єкти поставки", "Index", "ItemInSupplies", new {id = item.SupplyId}, null)
+                    }
+                 </td>
 
                 <td>
                     @Html.ActionLink("Редагувати", "Edit", new {id = item.SupplyId})
                     @Html.ActionLink("Видалити", "Delete", new {id = item.SupplyId})
                 </td>
                 <td>
-                    @Html.ActionLink("Звіт", "Report", new { id = item.SupplyId })
-                </td>
+                    @if (!@item.IsGenerated)
+                    {
+                        @Html.ActionLink("Згенерувати", "Generate", new {id = item.SupplyId})
+                    }
+            </td>
             </tr>
         }
 

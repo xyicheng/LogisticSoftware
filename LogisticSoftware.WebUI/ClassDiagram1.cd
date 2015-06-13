@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LogisticSoftware.WebUI.BundleConfig" Collapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.FilterConfig" Collapsed="true">
+    <Position X="23.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.RouteConfig">
+    <Position X="15.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.MvcApplication" Collapsed="true">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.AccountController">
+    <Position X="23.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAEAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.DriversController" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\DriversController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.ItemInSuppliesController" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ItemInSuppliesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.PlaceOnTheRoutesController" Collapsed="true">
+    <Position X="23" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQAACAAAAAAAAAAAEAAEAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\PlaceOnTheRoutesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.SuppliesController" Collapsed="true">
+    <Position X="20" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQAACAAEAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\SuppliesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.UsersController" Collapsed="true">
+    <Position X="16.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\UsersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.VehiclesController" Collapsed="true">
+    <Position X="16.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\VehiclesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.PlacesControllers.CustomersController" Collapsed="true">
+    <Position X="17.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PlacesControllers\CustomersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.PlacesControllers.FactoriesController" Collapsed="true">
+    <Position X="22.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PlacesControllers\FactoriesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.PlacesControllers.FarmsController" Collapsed="true">
+    <Position X="24.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PlacesControllers\FarmsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.PlacesControllers.GaragesController" Collapsed="true">
+    <Position X="11" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PlacesControllers\GaragesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.PlacesControllers.GranariesController" Collapsed="true">
+    <Position X="13.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PlacesControllers\GranariesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.PlacesControllers.PlacesController" Collapsed="true">
+    <Position X="17.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAQACQRgDCBAAAAABAEAAEABEICABEAIAAAAQA=</HashCode>
+      <FileName>Controllers\PlacesControllers\PlacesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.PlacesControllers.SuppliersController" Collapsed="true">
+    <Position X="15.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PlacesControllers\SuppliersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Controllers.PlacesControllers.WarehousesController" Collapsed="true">
+    <Position X="20" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PlacesControllers\WarehousesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Infrastructure.Concrete.FormsAuthProvider" BaseTypeListCollapsed="true">
+    <Position X="19.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAgAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Concrete\FormsAuthProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Infrastructure.NinjectControllerFactory" Collapsed="true">
+    <Position X="21.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAkAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\NinjectControllerFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.Driver">
+    <Position X="8.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgBAAAAAAAAQAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Entities\Driver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.FuelType">
+    <Position X="8.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgIAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Entities\FuelType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.ItemInSupply">
+    <Position X="5.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EhAEAAAAAAAAAAAAQAEAEAAABAAIgAAABAAAAAAAAAA=</HashCode>
+      <FileName>Models\Entities\ItemInSupply.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.Supply">
+    <Position X="3.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAiAAAAAAACABAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Entities\Supply.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.User">
+    <Position X="7" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAwAAAAAAAACAAAQAAAAAAA=</HashCode>
+      <FileName>Models\Entities\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.Vehicle">
+    <Position X="10.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAQAEAAAABAAAAAAACEAAAAAgEAAEAAAAAgABAA=</HashCode>
+      <FileName>Models\Entities\Vehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.Places.Customer" Collapsed="true">
+    <Position X="3.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Entities\Places\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.Places.Factory" Collapsed="true">
+    <Position X="5.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Entities\Places\Factory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.Places.Farm" Collapsed="true">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Entities\Places\Farm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.Places.Garage" Collapsed="true">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Entities\Places\Garage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.Places.Granary" Collapsed="true">
+    <Position X="10.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Entities\Places\Granary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.Places.Place">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAEAAAAAAAAAIAAAAAAAAAAACAAAAAAAABAA=</HashCode>
+      <FileName>Models\Entities\Places\Place.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.Places.PlaceOnTheRoute">
+    <Position X="7" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAgAAAAACAAIAAAAAgAAAAAAAAAAAEAAAAABBAA=</HashCode>
+      <FileName>Models\Entities\Places\PlaceOnTheRoute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.Places.Supplier" Collapsed="true">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Entities\Places\Supplier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.Entities.Places.Warehouse" Collapsed="true">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Entities\Places\Warehouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.LoginViewModel">
+    <Position X="21.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAQAAAAAAAAA=</HashCode>
+      <FileName>Models\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.LogisticsDbContext">
+    <Position X="12.75" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BEEAgCAAAAAAgIAAEAAAEAAAUIAAAAAAEEAAAAEQAAA=</HashCode>
+      <FileName>Models\LogisticsDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LogisticSoftware.WebUI.Models.LogisticsDbInitializer">
+    <Position X="18.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\LogisticsDbContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="LogisticSoftware.WebUI.Infrastructure.Abstract.IAuthProvider">
+    <Position X="18" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Abstract\IAuthProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

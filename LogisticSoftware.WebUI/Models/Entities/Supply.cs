@@ -24,6 +24,8 @@ namespace LogisticSoftware.WebUI.Models.Entities
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime Date { get; set; }
 
+        public bool IsGenerated { get; set; }
+
         public virtual ICollection<PlaceOnTheRoute> PlacesOnTheRoute { get; set; }
 
 
