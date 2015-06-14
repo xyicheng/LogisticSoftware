@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AntColony\AntColony.cs" />
     <Compile Include="Distance\GoogleDistanseMatrixFinder.cs" />
     <Compile Include="Distance\GoogleDistanseMatrixResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
